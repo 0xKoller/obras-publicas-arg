@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="20" fill="#26A69A"/>
+  <!-- Factory with reduced emissions icon -->
+  <g transform="translate(100, 80)" fill="white">
+    <!-- Factory building -->
+    <rect x="-35" y="-10" width="25" height="40" rx="2"/>
+    <rect x="-5" y="5" width="25" height="25" rx="2"/>
+    <!-- Chimney -->
+    <rect x="-30" y="-30" width="10" height="22" rx="1"/>
+    <!-- Downward arrow (reduction) -->
+    <polygon points="30,-25 30,-5 40,-5 25,10 10,-5 20,-5 20,-25" fill="white"/>
+  </g>
+  <!-- Label -->
+  <text x="100" y="175" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold">Mitigaci&#xF3;n</text>
+</svg>
