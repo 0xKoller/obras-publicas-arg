@@ -1,11 +1,15 @@
 import L from "leaflet";
+import { getSectorSvg } from "@/lib/constants";
 
-const BUILDING_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="obra-marker-icon"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>`;
+function makeSvg(innerPaths: string): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="obra-marker-icon">${innerPaths}</svg>`;
+}
 
-export function createObraIcon(statusColor: string): L.DivIcon {
+export function createObraIcon(statusColor: string, sector?: string): L.DivIcon {
+  const svg = makeSvg(getSectorSvg(sector ?? ""));
   return L.divIcon({
     className: "obra-marker",
-    html: `<div class="obra-marker-inner" style="background-color:${statusColor}">${BUILDING_SVG}</div>`,
+    html: `<div class="obra-marker-inner" style="background-color:${statusColor}">${svg}</div>`,
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -18],

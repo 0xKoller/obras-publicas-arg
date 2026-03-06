@@ -50,7 +50,7 @@ function ViewportMarkers({
 }: {
   obras: Obra[];
   onSelectObra: (obra: Obra) => void;
-  getIcon: (statusColor: string) => L.DivIcon;
+  getIcon: (statusColor: string, sector: string) => L.DivIcon;
 }) {
   const map = useMap();
   const [bounds, setBounds] = useState<LatLngBounds | null>(
@@ -81,7 +81,7 @@ function ViewportMarkers({
         <Marker
           key={obra.id}
           position={[obra.lat, obra.lng]}
-          icon={getIcon(getStatusColor(obra.etapa))}
+          icon={getIcon(getStatusColor(obra.etapa), obra.sector)}
           eventHandlers={{
             click: () => onSelectObra(obra),
           }}
@@ -121,11 +121,12 @@ export default function LeafletMap({
 }: LeafletMapProps) {
   const getIcon = useMemo(() => {
     const cache = new Map<string, L.DivIcon>();
-    return (statusColor: string) => {
-      if (!cache.has(statusColor)) {
-        cache.set(statusColor, createObraIcon(statusColor));
+    return (statusColor: string, sector: string) => {
+      const key = `${statusColor}|${sector}`;
+      if (!cache.has(key)) {
+        cache.set(key, createObraIcon(statusColor, sector));
       }
-      return cache.get(statusColor)!;
+      return cache.get(key)!;
     };
   }, []);
 
