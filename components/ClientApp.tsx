@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import type { Obra, FilterState } from "@/lib/types";
 import MapContainerWrapper from "./map/MapContainer";
 import FilterPanel from "./filters/FilterPanel";
@@ -12,6 +12,7 @@ import { Loader2 } from "lucide-react";
 
 export default function ClientApp() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [obras, setObras] = useState<Obra[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -66,19 +67,19 @@ export default function ClientApp() {
       });
   }, []);
 
-  // Auto-select obra from URL query param (?obra=ID)
+  // Auto-select obra from URL query param (?obra=ID) and fly to it
   useEffect(() => {
+    if (obras.length === 0) return;
     const obraId = searchParams.get("obra");
-    if (obraId && obras.length > 0 && !selectedObra) {
-      const match = obras.find((o) => o.id === obraId);
-      if (match) {
-        setSelectedObra(match);
-        if (match.lat && match.lng) {
-          setFlyTo([match.lat, match.lng]);
-        }
+    if (!obraId) return;
+    const match = obras.find((o) => o.id === obraId);
+    if (match) {
+      setSelectedObra(match);
+      if (match.lat && match.lng) {
+        setFlyTo([match.lat, match.lng]);
       }
     }
-  }, [searchParams, obras, selectedObra]);
+  }, [obras, searchParams]);
 
   const filteredObras = useMemo(() => {
     return obras.filter((obra) => {
@@ -135,9 +136,18 @@ export default function ClientApp() {
     [obras]
   );
 
-  const handleSelectObra = useCallback((obra: Obra) => {
-    setSelectedObra(obra);
-  }, []);
+  const handleSelectObra = useCallback(
+    (obra: Obra) => {
+      setSelectedObra(obra);
+      router.replace(`/?obra=${obra.id}`, { scroll: false });
+    },
+    [router]
+  );
+
+  const handleCloseObra = useCallback(() => {
+    setSelectedObra(null);
+    router.replace("/", { scroll: false });
+  }, [router]);
 
   if (loading) {
     return (
@@ -199,7 +209,7 @@ export default function ClientApp() {
       {/* Detail Panel */}
       <ObraDetailPanel
         obra={selectedObra}
-        onClose={() => setSelectedObra(null)}
+        onClose={handleCloseObra}
       />
     </div>
   );
