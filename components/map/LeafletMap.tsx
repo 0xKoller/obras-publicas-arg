@@ -1,14 +1,16 @@
 "use client";
 
+import { useMemo } from "react";
 import {
   MapContainer,
   TileLayer,
-  CircleMarker,
+  Marker,
   Popup,
   useMap,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import "leaflet/dist/leaflet.css";
+import type L from "leaflet";
 import type { Obra } from "@/lib/types";
 import {
   ARGENTINA_CENTER,
@@ -16,6 +18,7 @@ import {
   getStatusColor,
   formatARS,
 } from "@/lib/constants";
+import { createObraIcon, createClusterIcon } from "./map-icons";
 
 interface LeafletMapProps {
   obras: Obra[];
@@ -31,6 +34,16 @@ function FitBounds({ obras }: { obras: Obra[] }) {
 }
 
 export default function LeafletMap({ obras, onSelectObra }: LeafletMapProps) {
+  const getIcon = useMemo(() => {
+    const cache = new Map<string, L.DivIcon>();
+    return (statusColor: string) => {
+      if (!cache.has(statusColor)) {
+        cache.set(statusColor, createObraIcon(statusColor));
+      }
+      return cache.get(statusColor)!;
+    };
+  }, []);
+
   return (
     <MapContainer
       center={ARGENTINA_CENTER}
@@ -43,18 +56,12 @@ export default function LeafletMap({ obras, onSelectObra }: LeafletMapProps) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <FitBounds obras={obras} />
-      <MarkerClusterGroup chunkedLoading>
+      <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterIcon}>
         {obras.map((obra) => (
-          <CircleMarker
+          <Marker
             key={obra.id}
-            center={[obra.lat, obra.lng]}
-            radius={8}
-            pathOptions={{
-              fillColor: getStatusColor(obra.etapa),
-              color: "#fff",
-              weight: 2,
-              fillOpacity: 0.8,
-            }}
+            position={[obra.lat, obra.lng]}
+            icon={getIcon(getStatusColor(obra.etapa))}
             eventHandlers={{
               click: () => onSelectObra(obra),
             }}
@@ -80,7 +87,7 @@ export default function LeafletMap({ obras, onSelectObra }: LeafletMapProps) {
                 </p>
               </div>
             </Popup>
-          </CircleMarker>
+          </Marker>
         ))}
       </MarkerClusterGroup>
     </MapContainer>
