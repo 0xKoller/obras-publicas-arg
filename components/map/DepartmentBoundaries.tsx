@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { GeoJSON, Pane, useMap, useMapEvents } from "react-leaflet";
 import type { FeatureCollection, Feature, Geometry } from "geojson";
 import type { Layer, PathOptions, LeafletMouseEvent } from "leaflet";
@@ -74,9 +74,16 @@ export default function DepartmentBoundaries({
     if (!geoJsonLayer) return;
 
     geoJsonLayer.eachLayer((layer: Layer) => {
-      const feature = (layer as L.GeoJSON & { feature: Feature<Geometry, DepartmentProperties> }).feature;
+      const feature = (
+        layer as L.GeoJSON & {
+          feature: Feature<Geometry, DepartmentProperties>;
+        }
+      ).feature;
       if (!feature) return;
-      const key = buildDepartmentKey(feature.properties.provincia, feature.properties.departamento);
+      const key = buildDepartmentKey(
+        feature.properties.provincia,
+        feature.properties.departamento
+      );
       if (key === selectedKeyRef.current) {
         (layer as L.Path).setStyle(SELECTED_STYLE);
       } else {
@@ -137,9 +144,16 @@ export default function DepartmentBoundaries({
           // Deselect previous
           if (selectedKeyRef.current && selectedKeyRef.current !== key) {
             geoJsonRef.current?.eachLayer((l: Layer) => {
-              const lf = (l as L.GeoJSON & { feature: Feature<Geometry, DepartmentProperties> }).feature;
+              const lf = (
+                l as L.GeoJSON & {
+                  feature: Feature<Geometry, DepartmentProperties>;
+                }
+              ).feature;
               if (!lf) return;
-              const lKey = buildDepartmentKey(lf.properties.provincia, lf.properties.departamento);
+              const lKey = buildDepartmentKey(
+                lf.properties.provincia,
+                lf.properties.departamento
+              );
               if (lKey === selectedKeyRef.current) {
                 (l as L.Path).setStyle(currentBase);
               }

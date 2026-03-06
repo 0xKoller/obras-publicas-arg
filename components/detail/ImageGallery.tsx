@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Loader2, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ObraImage } from "@/lib/types";
 
@@ -40,11 +41,13 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
   return (
     <div className="space-y-2">
       <div className="relative h-48 bg-muted rounded-lg overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={currentImage.url}
           alt={currentImage.description || "Foto de la obra"}
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="(max-width: 450px) 100vw, 400px"
+          unoptimized
           onError={() => {
             setImgError((prev) => new Set(prev).add(safeIndex));
             const next = images.findIndex(
@@ -62,6 +65,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
                   (prev) => (prev - 1 + images.length) % images.length
                 )
               }
+              aria-label="Imagen anterior"
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition-colors"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -70,6 +74,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
               onClick={() =>
                 setSelectedIndex((prev) => (prev + 1) % images.length)
               }
+              aria-label="Imagen siguiente"
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition-colors"
             >
               <ChevronRight className="h-4 w-4" />
@@ -77,7 +82,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
           </>
         )}
 
-        <div className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded-full">
+        <div aria-live="polite" className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded-full">
           {safeIndex + 1} / {images.length}
         </div>
       </div>
@@ -89,17 +94,20 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
               <button
                 key={i}
                 onClick={() => setSelectedIndex(i)}
-                className={`shrink-0 w-14 h-10 rounded overflow-hidden border-2 transition-colors ${
+                aria-label={`Ver imagen ${i + 1}`}
+                className={`relative shrink-0 w-14 h-10 rounded overflow-hidden border-2 transition-colors ${
                   i === safeIndex
                     ? "border-primary"
                     : "border-transparent opacity-60 hover:opacity-100"
                 }`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={img.url}
                   alt=""
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="56px"
+                  unoptimized
                   onError={() =>
                     setImgError((prev) => new Set(prev).add(i))
                   }

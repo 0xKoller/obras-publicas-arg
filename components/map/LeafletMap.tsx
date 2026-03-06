@@ -75,8 +75,8 @@ function ViewportMarkers({
   getIcon: (statusColor: string, sector: string) => L.DivIcon;
 }) {
   const map = useMap();
-  const [bounds, setBounds] = useState<LatLngBounds | null>(
-    () => map.getBounds()
+  const [bounds, setBounds] = useState<LatLngBounds | null>(() =>
+    map.getBounds()
   );
 
   const updateBounds = useCallback(() => {
@@ -95,10 +95,7 @@ function ViewportMarkers({
   }, [obras, bounds]);
 
   return (
-    <MarkerClusterGroup
-      chunkedLoading
-      iconCreateFunction={createClusterIcon}
-    >
+    <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterIcon}>
       {visibleObras.map((obra) => (
         <Marker
           key={obra.id}
@@ -110,21 +107,21 @@ function ViewportMarkers({
         >
           <Popup>
             <div className="max-w-[250px] font-sans">
-              <p className="font-semibold text-sm text-[#0B2D45]">
+              <p className="text-sm font-semibold text-[#0B2D45]">
                 {obra.nombre}
               </p>
               <p className="text-xs text-gray-600">
                 {obra.provincia} - {obra.departamento}
               </p>
-              <p className="text-xs mt-1">
+              <p className="mt-1 text-xs">
                 <span
-                  className="inline-block px-2 py-0.5 rounded text-white text-[10px] font-medium"
+                  className="inline-block rounded px-2 py-0.5 text-[10px] font-medium text-white"
                   style={{ backgroundColor: getStatusColor(obra.etapa) }}
                 >
                   {obra.etapa}
                 </span>
               </p>
-              <p className="text-xs mt-1 font-medium">
+              <p className="mt-1 text-xs font-medium">
                 {formatARS(obra.montoTotal)}
               </p>
             </div>
@@ -153,15 +150,13 @@ export default function LeafletMap({
     return counts;
   }, [obras]);
 
-  const getIcon = useMemo(() => {
-    const cache = new Map<string, L.DivIcon>();
-    return (statusColor: string, sector: string) => {
-      const key = `${statusColor}|${sector}`;
-      if (!cache.has(key)) {
-        cache.set(key, createObraIcon(statusColor, sector));
-      }
-      return cache.get(key)!;
-    };
+  const iconCacheRef = useRef(new Map<string, L.DivIcon>());
+  const getIcon = useCallback((statusColor: string, sector: string) => {
+    const key = `${statusColor}|${sector}`;
+    if (!iconCacheRef.current.has(key)) {
+      iconCacheRef.current.set(key, createObraIcon(statusColor, sector));
+    }
+    return iconCacheRef.current.get(key)!;
   }, []);
 
   return (
@@ -174,6 +169,7 @@ export default function LeafletMap({
       maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
       className="h-full w-full"
       scrollWheelZoom={true}
+      aria-label="Mapa interactivo de obras publicas de Argentina"
     >
       <TileLayer
         attribution={TILE_ATTRIBUTION}

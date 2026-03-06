@@ -20,6 +20,7 @@ export function useDepartmentBoundaries() {
 
   useEffect(() => {
     let cancelled = false;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- data fetching pattern
     setLoading(true);
 
     fetch("/data/departamentos.geojson")

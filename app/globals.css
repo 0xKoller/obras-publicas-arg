@@ -60,40 +60,40 @@
   --card-foreground: #333333;
   --popover: #ffffff;
   --popover-foreground: #333333;
-  --primary: #2897D4;
+  --primary: #2897d4;
   --primary-foreground: #ffffff;
   --secondary: #f0f4f8;
-  --secondary-foreground: #0B2D45;
+  --secondary-foreground: #0b2d45;
   --muted: #f5f5f5;
   --muted-foreground: #666666;
-  --accent: #74ACDF;
-  --accent-foreground: #0B2D45;
-  --destructive: #C62828;
+  --accent: #74acdf;
+  --accent-foreground: #0b2d45;
+  --destructive: #c62828;
   --border: #e0e0e0;
   --input: #e0e0e0;
-  --ring: #2897D4;
+  --ring: #2897d4;
 
   /* Chart colors - Poncho palette */
-  --chart-1: #2897D4;
-  --chart-2: #2E7D32;
-  --chart-3: #F9A825;
-  --chart-4: #74ACDF;
-  --chart-5: #C62828;
+  --chart-1: #2897d4;
+  --chart-2: #2e7d32;
+  --chart-3: #f9a825;
+  --chart-4: #74acdf;
+  --chart-5: #c62828;
 
   /* Sidebar */
   --sidebar: #f0f4f8;
   --sidebar-foreground: #333333;
-  --sidebar-primary: #2897D4;
+  --sidebar-primary: #2897d4;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #74ACDF;
-  --sidebar-accent-foreground: #0B2D45;
+  --sidebar-accent: #74acdf;
+  --sidebar-accent-foreground: #0b2d45;
   --sidebar-border: #e0e0e0;
-  --sidebar-ring: #2897D4;
+  --sidebar-ring: #2897d4;
 
   /* Custom government colors */
-  --gov-navy: #0B2D45;
-  --gov-celeste: #74ACDF;
-  --gov-gold: #F9A825;
+  --gov-navy: #0b2d45;
+  --gov-celeste: #74acdf;
+  --gov-gold: #f9a825;
 }
 
 @layer base {
@@ -140,7 +140,7 @@
 
 .obra-cluster-inner {
   border-radius: 50%;
-  background-color: #0B2D45;
+  background-color: #0b2d45;
   border: 3px solid rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@
 }
 
 .department-tooltip strong {
-  color: #0B2D45;
+  color: #0b2d45;
   font-size: 13px;
 }
 
@@ -211,6 +211,10 @@
 }
 
 @keyframes mapFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

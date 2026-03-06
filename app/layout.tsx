@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   title: "Mapa de Obras Publicas - Argentina",
   description:
     "Visualizacion interactiva de las obras publicas de Argentina",
+  openGraph: {
+    title: "Mapa de Obras Publicas - Argentina",
+    description:
+      "Visualizacion interactiva de las obras publicas de Argentina",
+    type: "website",
+    locale: "es_AR",
+    siteName: "Mapa de Obras Publicas",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mapa de Obras Publicas - Argentina",
+    description:
+      "Visualizacion interactiva de las obras publicas de Argentina",
+  },
 };
 
 export default function RootLayout({

@@ -25,6 +25,7 @@ export default function ClientApp() {
   const currentYear = new Date().getFullYear();
   const defaultYearRange: [number, number] = [currentYear - 3, currentYear];
 
+  const [retryKey, setRetryKey] = useState(0);
   const [filters, setFilters] = useState<FilterState>({
     province: null,
     sectors: [],
@@ -35,11 +36,10 @@ export default function ClientApp() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/api/obras")
-        .then((res) => {
-          if (!res.ok) throw new Error("Error cargando datos");
-          return res.json();
-        }),
+      fetch("/api/obras").then((res) => {
+        if (!res.ok) throw new Error("Error cargando datos");
+        return res.json();
+      }),
       fetch("/api/geolocation")
         .then((res) => res.json())
         .catch(() => null),
@@ -65,15 +65,16 @@ export default function ClientApp() {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }, [retryKey]);
 
-  // Auto-select obra from URL query param (?obra=ID) and fly to it
+  // Sync selected obra from URL query param (?obra=ID) — legitimate URL-driven state
   useEffect(() => {
     if (obras.length === 0) return;
     const obraId = searchParams.get("obra");
     if (!obraId) return;
     const match = obras.find((o) => o.id === obraId);
     if (match) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing with URL searchParams
       setSelectedObra(match);
       if (match.lat && match.lng) {
         setFlyTo([match.lat, match.lng]);
@@ -84,15 +85,9 @@ export default function ClientApp() {
   const filteredObras = useMemo(() => {
     return obras.filter((obra) => {
       if (filters.province && obra.provincia !== filters.province) return false;
-      if (
-        filters.sectors.length > 0 &&
-        !filters.sectors.includes(obra.sector)
-      )
+      if (filters.sectors.length > 0 && !filters.sectors.includes(obra.sector))
         return false;
-      if (
-        filters.statuses.length > 0 &&
-        !filters.statuses.includes(obra.etapa)
-      )
+      if (filters.statuses.length > 0 && !filters.statuses.includes(obra.etapa))
         return false;
       if (
         filters.searchQuery &&
@@ -125,10 +120,7 @@ export default function ClientApp() {
     () =>
       [
         ...new Set(
-          obras.flatMap((o) => [
-            parseInt(o.fechaInicio),
-            parseInt(o.fechaFin),
-          ])
+          obras.flatMap((o) => [parseInt(o.fechaInicio), parseInt(o.fechaFin)])
         ),
       ]
         .filter((y) => !isNaN(y))
@@ -151,10 +143,10 @@ export default function ClientApp() {
 
   if (loading) {
     return (
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex flex-1 items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
-          <p className="text-sm text-muted-foreground">
+          <Loader2 className="text-primary h-8 w-8 animate-spin" />
+          <p className="text-muted-foreground text-sm">
             Cargando obras publicas...
           </p>
         </div>
@@ -164,18 +156,30 @@ export default function ClientApp() {
 
   if (error) {
     return (
-      <div className="flex-1 flex items-center justify-center">
-        <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 max-w-md text-center">
-          <p className="text-sm text-destructive font-medium">Error: {error}</p>
+      <div className="flex flex-1 items-center justify-center">
+        <div className="bg-destructive/10 border-destructive/20 max-w-md rounded-lg border p-6 text-center">
+          <p className="text-destructive mb-4 text-sm font-medium">
+            Error: {error}
+          </p>
+          <button
+            onClick={() => {
+              setError(null);
+              setLoading(true);
+              setRetryKey((k) => k + 1);
+            }}
+            className="bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md px-4 py-2 text-sm font-medium transition-colors"
+          >
+            Reintentar
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-1 min-h-0">
+    <div className="flex min-h-0 flex-1">
       {/* Sidebar */}
-      <div className="w-80 bg-white border-r overflow-y-auto p-4 flex flex-col gap-4 shrink-0">
+      <div className="flex w-80 shrink-0 flex-col gap-4 overflow-y-auto border-r bg-white p-4">
         <FilterPanel
           filters={filters}
           onFiltersChange={setFilters}
@@ -192,14 +196,12 @@ export default function ClientApp() {
       </div>
 
       {/* Map */}
-      <div className="flex-1 relative z-0">
+      <div className="relative z-0 flex-1">
         <MapContainerWrapper
           obras={filteredObras}
           onSelectObra={handleSelectObra}
           initialCenter={
-            userLocation
-              ? [userLocation.lat, userLocation.lng]
-              : undefined
+            userLocation ? [userLocation.lat, userLocation.lng] : undefined
           }
           initialZoom={userLocation ? 10 : undefined}
           flyTo={flyTo}
@@ -207,14 +209,11 @@ export default function ClientApp() {
       </div>
 
       {/* Detail Panel */}
-      <ObraDetailPanel
-        obra={selectedObra}
-        onClose={handleCloseObra}
-      />
+      <ObraDetailPanel obra={selectedObra} onClose={handleCloseObra} />
     </div>
   );
 }
 
 function Separator() {
-  return <div className="border-t border-border" />;
+  return <div className="border-border border-t" />;
 }
