@@ -218,7 +218,14 @@ export default function FilterPanel({
                 }
                 role="checkbox"
                 aria-checked={selected}
+                tabIndex={0}
                 onClick={() => toggleStatus(status)}
+                onKeyDown={(e) => {
+                  if (e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    toggleStatus(status);
+                  }
+                }}
               >
                 <StatusIcon className="h-3 w-3 mr-1" />
                 {status}
@@ -250,7 +257,14 @@ export default function FilterPanel({
                 }
                 role="checkbox"
                 aria-checked={selected}
+                tabIndex={0}
                 onClick={() => toggleSector(sector)}
+                onKeyDown={(e) => {
+                  if (e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    toggleSector(sector);
+                  }
+                }}
               >
                 <SectorIcon className="h-3 w-3 mr-1" />
                 {sector}
