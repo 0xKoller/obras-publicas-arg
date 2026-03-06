@@ -10,6 +10,19 @@ import type { Obra, ObraRaw, DepartmentLookup } from "../types";
 const CSV_URL =
   "https://mapainversiones.obraspublicas.gob.ar/opendata/dataset_mop.csv";
 
+function cleanDashValue(value: string): string {
+  if (!value || value.trim() === "-" || value.trim() === "") return "";
+  return value.trim();
+}
+
+function parsePipeSeparatedTags(value: string): string[] {
+  if (!value || value.trim() === "" || value.trim() === "-") return [];
+  return value
+    .split("|")
+    .map((t) => t.trim())
+    .filter(Boolean);
+}
+
 let cachedObras: Obra[] | null = null;
 let cacheTimestamp = 0;
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour
@@ -43,6 +56,20 @@ function mapRawToObra(
     programa: raw.programa_infraestructura || "",
     ejecutor: raw.entidadejecutoranombre || "",
     moneda: raw.tipomoneda || "ARS",
+    numeroObra: cleanDashValue(raw.numeroobra),
+    codigoBapin: cleanDashValue(raw.codigobapin),
+    duracionDias: parseInt(raw.duracionobrasdias || "0", 10) || 0,
+    objetivoGeneral: raw.objetivogeneral || "",
+    codigoBahra: cleanDashValue(raw.codigo_bahra),
+    financiador1: cleanDashValue(raw.organismo_financiador_1),
+    financiador2: cleanDashValue(raw.organismo_financiador_2),
+    financiadorPrestamo: cleanDashValue(raw.organismo_financiador_prestamo),
+    contraparteKey: cleanDashValue(raw.contraparte_key),
+    contraparteVal: cleanDashValue(raw.contraparte_val),
+    contraparteCuit: cleanDashValue(raw.contraparte_cuit),
+    contraparteModalidad: cleanDashValue(raw.contraparte_modalidad),
+    tagAccionClimatica: parsePipeSeparatedTags(raw.tag_accionclimatica),
+    tagOdsIncidencia: parsePipeSeparatedTags(raw.tag_ods_incidencia),
     lat: centroid.lat,
     lng: centroid.lng,
   };
