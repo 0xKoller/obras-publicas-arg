@@ -22,6 +22,8 @@ import {
 } from "lucide-react";
 import ImageGallery from "./ImageGallery";
 import { DetailSection, DetailField } from "./DetailSection";
+import { OdsBadge } from "./OdsBadge";
+import { ClimateActionBadge } from "./ClimateActionBadge";
 import { useObraImages } from "@/hooks/use-obra-images";
 
 interface ObraDetailPanelProps {
@@ -63,30 +65,6 @@ function formatDuration(days: number): string {
   return `${years}a ${remainingMonths}m (~${days} dias)`;
 }
 
-const ODS_COLORS: Record<string, string> = {
-  "ODS 1": "#E5243B",
-  "ODS 2": "#DDA63A",
-  "ODS 3": "#4C9F38",
-  "ODS 4": "#C5192D",
-  "ODS 5": "#FF3A21",
-  "ODS 6": "#26BDE2",
-  "ODS 7": "#FCC30B",
-  "ODS 8": "#A21942",
-  "ODS 9": "#FD6925",
-  "ODS 10": "#DD1367",
-  "ODS 11": "#FD9D24",
-  "ODS 12": "#BF8B2E",
-  "ODS 13": "#3F7E44",
-  "ODS 14": "#0A97D9",
-  "ODS 15": "#56C02B",
-  "ODS 16": "#00689D",
-  "ODS 17": "#19486A",
-};
-
-function getOdsColor(tag: string): string {
-  const odsNumber = tag.match(/ODS \d+/)?.[0];
-  return odsNumber ? ODS_COLORS[odsNumber] || "#6b7280" : "#6b7280";
-}
 
 export default function ObraDetailPanel({
   obra,
@@ -338,15 +316,9 @@ export default function ObraDetailPanel({
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium mb-1.5">
                         Accion Climatica
                       </p>
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-2">
                         {obra.tagAccionClimatica.map((tag) => (
-                          <Badge
-                            key={tag}
-                            variant="outline"
-                            className="text-[10px] border-green-300 text-green-700 bg-green-50"
-                          >
-                            {tag}
-                          </Badge>
+                          <ClimateActionBadge key={tag} tag={tag} />
                         ))}
                       </div>
                     </div>
@@ -356,17 +328,9 @@ export default function ObraDetailPanel({
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium mb-1.5">
                         Objetivos de Desarrollo Sostenible
                       </p>
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-2">
                         {obra.tagOdsIncidencia.map((tag) => (
-                          <Badge
-                            key={tag}
-                            className="text-[10px] text-white"
-                            style={{
-                              backgroundColor: getOdsColor(tag),
-                            }}
-                          >
-                            {tag}
-                          </Badge>
+                          <OdsBadge key={tag} tag={tag} />
                         ))}
                       </div>
                     </div>
