@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Loader2, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ObraImage } from "@/lib/types";
 
@@ -40,11 +41,13 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
   return (
     <div className="space-y-2">
       <div className="relative h-48 bg-muted rounded-lg overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={currentImage.url}
           alt={currentImage.description || "Foto de la obra"}
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="(max-width: 450px) 100vw, 400px"
+          unoptimized
           onError={() => {
             setImgError((prev) => new Set(prev).add(safeIndex));
             const next = images.findIndex(
@@ -89,17 +92,19 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
               <button
                 key={i}
                 onClick={() => setSelectedIndex(i)}
-                className={`shrink-0 w-14 h-10 rounded overflow-hidden border-2 transition-colors ${
+                className={`relative shrink-0 w-14 h-10 rounded overflow-hidden border-2 transition-colors ${
                   i === safeIndex
                     ? "border-primary"
                     : "border-transparent opacity-60 hover:opacity-100"
                 }`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={img.url}
                   alt=""
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="56px"
+                  unoptimized
                   onError={() =>
                     setImgError((prev) => new Set(prev).add(i))
                   }
