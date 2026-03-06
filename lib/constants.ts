@@ -1,5 +1,7 @@
 export const ARGENTINA_CENTER: [number, number] = [-38.4161, -63.6167];
+export const BUENOS_AIRES_CENTER: [number, number] = [-34.6037, -58.3816];
 export const DEFAULT_ZOOM = 4;
+export const DEFAULT_FALLBACK_ZOOM = 10;
 
 export const ARGENTINA_BOUNDS: [[number, number], [number, number]] = [
   [-57, -76],
@@ -82,8 +84,8 @@ const SECTOR_ICONS: Record<string, LucideIcon> = {
   "AGUA Y CLOACA": Droplets,
   Arquitectura: Building2,
   ARQUITECTURA: Building2,
-  "Educación": GraduationCap,
-  "Educacion": GraduationCap,
+  Educación: GraduationCap,
+  Educacion: GraduationCap,
   EDUCACION: GraduationCap,
   "Equipamiento Urbano": Landmark,
   "EQUIPAMIENTO URBANO": Landmark,
@@ -111,7 +113,7 @@ export function getSectorIcon(sector: string): LucideIcon {
 const SECTOR_COLORS: Record<string, string> = {
   "Agua y Cloaca": "#3b82f6",
   Arquitectura: "#64748b",
-  "Educación": "#8b5cf6",
+  Educación: "#8b5cf6",
   "Equipamiento Urbano": "#f59e0b",
   "Obras Viales": "#78716c",
   Otros: "#6b7280",
@@ -134,7 +136,7 @@ export function getSectorColor(sector: string): string {
 const SECTOR_SVGS: Record<string, string> = {
   "Agua y Cloaca": `<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>`,
   Arquitectura: `<path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>`,
-  "Educación": `<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>`,
+  Educación: `<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>`,
   "Equipamiento Urbano": `<path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/>`,
   "Obras Viales": `<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>`,
   Otros: `<circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>`,
