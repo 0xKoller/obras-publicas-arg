@@ -117,7 +117,7 @@ export default function ClientApp() {
       </div>
 
       {/* Map */}
-      <div className="flex-1">
+      <div className="flex-1 relative z-0">
         <MapContainerWrapper
           obras={filteredObras}
           onSelectObra={handleSelectObra}
