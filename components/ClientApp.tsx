@@ -18,11 +18,15 @@ export default function ClientApp() {
     lat: number;
     lng: number;
   } | null>(null);
+  const currentYear = new Date().getFullYear();
+  const defaultYearRange: [number, number] = [currentYear - 3, currentYear];
+
   const [filters, setFilters] = useState<FilterState>({
     province: null,
     sectors: [],
     statuses: [],
     searchQuery: "",
+    yearRange: defaultYearRange,
   });
 
   useEffect(() => {
@@ -77,6 +81,12 @@ export default function ClientApp() {
         !obra.nombre.toLowerCase().includes(filters.searchQuery.toLowerCase())
       )
         return false;
+      if (filters.yearRange) {
+        const [minYear, maxYear] = filters.yearRange;
+        const start = parseInt(obra.fechaInicio) || 0;
+        const end = parseInt(obra.fechaFin) || 9999;
+        if (start > maxYear || end < minYear) return false;
+      }
       return true;
     });
   }, [obras, filters]);
@@ -91,6 +101,20 @@ export default function ClientApp() {
   );
   const uniqueStatuses = useMemo(
     () => [...new Set(obras.map((o) => o.etapa))].sort(),
+    [obras]
+  );
+  const uniqueYears = useMemo(
+    () =>
+      [
+        ...new Set(
+          obras.flatMap((o) => [
+            parseInt(o.fechaInicio),
+            parseInt(o.fechaFin),
+          ])
+        ),
+      ]
+        .filter((y) => !isNaN(y))
+        .sort((a, b) => a - b),
     [obras]
   );
 
@@ -131,6 +155,8 @@ export default function ClientApp() {
           provinces={uniqueProvinces}
           sectors={uniqueSectors}
           statuses={uniqueStatuses}
+          years={uniqueYears}
+          defaultYearRange={defaultYearRange}
         />
         <Separator />
         <StatsCards obras={filteredObras} />

@@ -19,6 +19,8 @@ interface FilterPanelProps {
   provinces: string[];
   sectors: string[];
   statuses: string[];
+  years: number[];
+  defaultYearRange: [number, number];
 }
 
 export default function FilterPanel({
@@ -27,6 +29,8 @@ export default function FilterPanel({
   provinces,
   sectors,
   statuses,
+  years,
+  defaultYearRange,
 }: FilterPanelProps) {
   const toggleStatus = (status: string) => {
     const next = filters.statuses.includes(status)
@@ -48,6 +52,7 @@ export default function FilterPanel({
       sectors: [],
       statuses: [],
       searchQuery: "",
+      yearRange: defaultYearRange,
     });
   };
 
@@ -55,7 +60,10 @@ export default function FilterPanel({
     filters.province ||
     filters.sectors.length > 0 ||
     filters.statuses.length > 0 ||
-    filters.searchQuery;
+    filters.searchQuery ||
+    (filters.yearRange &&
+      (filters.yearRange[0] !== defaultYearRange[0] ||
+        filters.yearRange[1] !== defaultYearRange[1]));
 
   return (
     <div className="flex flex-col gap-4">
@@ -113,6 +121,78 @@ export default function FilterPanel({
             ))}
           </SelectContent>
         </Select>
+      </div>
+
+      {/* Year Range */}
+      <div>
+        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+          Periodo
+        </label>
+        <div className="flex items-center gap-2">
+          <Select
+            value={
+              filters.yearRange ? String(filters.yearRange[0]) : "all"
+            }
+            onValueChange={(v) => {
+              if (v === "all") {
+                onFiltersChange({ ...filters, yearRange: null });
+              } else {
+                const from = parseInt(v);
+                const to = filters.yearRange
+                  ? Math.max(filters.yearRange[1], from)
+                  : defaultYearRange[1];
+                onFiltersChange({
+                  ...filters,
+                  yearRange: [from, to],
+                });
+              }
+            }}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Desde" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos</SelectItem>
+              {years.map((y) => (
+                <SelectItem key={y} value={String(y)}>
+                  {y}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <span className="text-xs text-muted-foreground shrink-0">a</span>
+          <Select
+            value={
+              filters.yearRange ? String(filters.yearRange[1]) : "all"
+            }
+            onValueChange={(v) => {
+              if (v === "all") {
+                onFiltersChange({ ...filters, yearRange: null });
+              } else {
+                const to = parseInt(v);
+                const from = filters.yearRange
+                  ? Math.min(filters.yearRange[0], to)
+                  : defaultYearRange[0];
+                onFiltersChange({
+                  ...filters,
+                  yearRange: [from, to],
+                });
+              }
+            }}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Hasta" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos</SelectItem>
+              {years.map((y) => (
+                <SelectItem key={y} value={String(y)}>
+                  {y}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       {/* Status */}

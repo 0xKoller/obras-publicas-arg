@@ -52,6 +52,7 @@ export interface FilterState {
   sectors: string[];
   statuses: string[];
   searchQuery: string;
+  yearRange: [number, number] | null;
 }
 
 export interface StatsData {
