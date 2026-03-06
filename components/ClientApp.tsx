@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import type { Obra, FilterState } from "@/lib/types";
 import MapContainerWrapper from "./map/MapContainer";
 import FilterPanel from "./filters/FilterPanel";
@@ -10,6 +11,8 @@ import Charts from "./dashboard/Charts";
 import { Loader2 } from "lucide-react";
 
 export default function ClientApp() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const [obras, setObras] = useState<Obra[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -62,6 +65,15 @@ export default function ClientApp() {
         setLoading(false);
       });
   }, []);
+
+  // Auto-select obra from URL query param after data loads
+  useEffect(() => {
+    if (obras.length === 0) return;
+    const obraId = searchParams.get("obra");
+    if (!obraId) return;
+    const match = obras.find((o) => o.id === obraId);
+    if (match) setSelectedObra(match);
+  }, [obras, searchParams]);
 
   const filteredObras = useMemo(() => {
     return obras.filter((obra) => {
@@ -118,9 +130,18 @@ export default function ClientApp() {
     [obras]
   );
 
-  const handleSelectObra = useCallback((obra: Obra) => {
-    setSelectedObra(obra);
-  }, []);
+  const handleSelectObra = useCallback(
+    (obra: Obra) => {
+      setSelectedObra(obra);
+      router.replace(`/?obra=${obra.id}`, { scroll: false });
+    },
+    [router]
+  );
+
+  const handleCloseObra = useCallback(() => {
+    setSelectedObra(null);
+    router.replace("/", { scroll: false });
+  }, [router]);
 
   if (loading) {
     return (
@@ -181,7 +202,7 @@ export default function ClientApp() {
       {/* Detail Panel */}
       <ObraDetailPanel
         obra={selectedObra}
-        onClose={() => setSelectedObra(null)}
+        onClose={handleCloseObra}
       />
     </div>
   );
