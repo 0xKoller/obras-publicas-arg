@@ -183,6 +183,28 @@
   font-size: 16px;
 }
 
+/* Remove focus outline on department boundary polygons */
+.leaflet-interactive:focus {
+  outline: none;
+}
+
+/* Department boundary tooltips */
+.department-tooltip {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.department-tooltip strong {
+  color: #0B2D45;
+  font-size: 13px;
+}
+
 /* Smooth map appearance */
 .leaflet-container {
   animation: mapFadeIn 0.3s ease-in;

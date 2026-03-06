@@ -27,6 +27,9 @@ import {
   formatARS,
 } from "@/lib/constants";
 import { createObraIcon, createClusterIcon } from "./map-icons";
+import { useDepartmentBoundaries } from "@/hooks/use-department-boundaries";
+import DepartmentBoundaries from "./DepartmentBoundaries";
+import { buildDepartmentKey } from "@/lib/geocode";
 
 interface LeafletMapProps {
   obras: Obra[];
@@ -139,6 +142,17 @@ export default function LeafletMap({
   initialZoom,
   flyTo,
 }: LeafletMapProps) {
+  const { geojson: boundariesGeoJson } = useDepartmentBoundaries();
+
+  const obraCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const obra of obras) {
+      const key = buildDepartmentKey(obra.provincia, obra.departamento);
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
+    return counts;
+  }, [obras]);
+
   const getIcon = useMemo(() => {
     const cache = new Map<string, L.DivIcon>();
     return (statusColor: string, sector: string) => {
@@ -169,6 +183,12 @@ export default function LeafletMap({
         updateWhenIdle={true}
         keepBuffer={2}
       />
+      {boundariesGeoJson && (
+        <DepartmentBoundaries
+          geojson={boundariesGeoJson}
+          obraCounts={obraCounts}
+        />
+      )}
       <FlyToLocation target={flyTo ?? null} />
       <FitBounds obras={obras} />
       <ViewportMarkers
