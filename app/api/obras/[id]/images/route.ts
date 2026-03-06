@@ -14,6 +14,14 @@ export async function GET(
 ) {
   const { id } = await params;
 
+  // Validate id: alphanumeric and hyphens only, max 50 characters
+  if (!id || id.length > 50 || !/^[a-zA-Z0-9-]+$/.test(id)) {
+    return NextResponse.json(
+      { error: "Invalid obra ID" },
+      { status: 400 }
+    );
+  }
+
   const cached = imageCache.get(id);
   if (cached && Date.now() - cached.timestamp < IMAGE_CACHE_TTL) {
     return NextResponse.json(cached.images);
