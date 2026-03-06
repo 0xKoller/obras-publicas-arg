@@ -66,6 +66,7 @@ interface MapContainerWrapperProps {
   onSelectObra: (obra: Obra) => void;
   initialCenter?: [number, number];
   initialZoom?: number;
+  flyTo?: [number, number] | null;
 }
 
 export default function MapContainerWrapper({
@@ -73,6 +74,7 @@ export default function MapContainerWrapper({
   onSelectObra,
   initialCenter,
   initialZoom,
+  flyTo,
 }: MapContainerWrapperProps) {
   return (
     <LeafletMap
@@ -80,6 +82,7 @@ export default function MapContainerWrapper({
       onSelectObra={onSelectObra}
       initialCenter={initialCenter}
       initialZoom={initialZoom}
+      flyTo={flyTo}
     />
   );
 }

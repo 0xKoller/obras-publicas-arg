@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Obra, FilterState } from "@/lib/types";
 import MapContainerWrapper from "./map/MapContainer";
 import FilterPanel from "./filters/FilterPanel";
@@ -10,10 +11,12 @@ import Charts from "./dashboard/Charts";
 import { Loader2 } from "lucide-react";
 
 export default function ClientApp() {
+  const searchParams = useSearchParams();
   const [obras, setObras] = useState<Obra[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedObra, setSelectedObra] = useState<Obra | null>(null);
+  const [flyTo, setFlyTo] = useState<[number, number] | null>(null);
   const [userLocation, setUserLocation] = useState<{
     lat: number;
     lng: number;
@@ -62,6 +65,20 @@ export default function ClientApp() {
         setLoading(false);
       });
   }, []);
+
+  // Auto-select obra from URL query param (?obra=ID)
+  useEffect(() => {
+    const obraId = searchParams.get("obra");
+    if (obraId && obras.length > 0 && !selectedObra) {
+      const match = obras.find((o) => o.id === obraId);
+      if (match) {
+        setSelectedObra(match);
+        if (match.lat && match.lng) {
+          setFlyTo([match.lat, match.lng]);
+        }
+      }
+    }
+  }, [searchParams, obras, selectedObra]);
 
   const filteredObras = useMemo(() => {
     return obras.filter((obra) => {
@@ -175,6 +192,7 @@ export default function ClientApp() {
               : undefined
           }
           initialZoom={userLocation ? 10 : undefined}
+          flyTo={flyTo}
         />
       </div>
 
