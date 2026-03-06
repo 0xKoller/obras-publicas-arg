@@ -17,7 +17,7 @@ export default function StatsCards({ obras }: StatsCardsProps) {
         ? obras.reduce((sum, o) => sum + o.avanceFisico, 0) / obras.length
         : 0;
     const completed = obras.filter(
-      (o) => o.etapa === "Finalizada" || o.etapa === "Finalizado"
+      (o) => o.etapa === "Finalizada"
     ).length;
 
     return { totalBudget, avgProgress, completed };
