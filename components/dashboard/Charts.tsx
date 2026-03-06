@@ -54,13 +54,34 @@ export default function Charts({ obras }: ChartsProps) {
       .slice(0, 10);
   }, [obras]);
 
-  if (obras.length === 0) return null;
+  if (obras.length === 0) {
+    return (
+      <div className="flex flex-col gap-4">
+        <div>
+          <h3 className="text-muted-foreground mb-2 text-xs font-medium tracking-wider uppercase">
+            Por Sector
+          </h3>
+          <div className="bg-muted/30 flex h-[180px] items-center justify-center rounded-md">
+            <p className="text-muted-foreground text-xs">Sin datos</p>
+          </div>
+        </div>
+        <div>
+          <h3 className="text-muted-foreground mb-2 text-xs font-medium tracking-wider uppercase">
+            Top 10 Provincias
+          </h3>
+          <div className="bg-muted/30 flex h-[200px] items-center justify-center rounded-md">
+            <p className="text-muted-foreground text-xs">Sin datos</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-4">
       {/* Sector Pie Chart */}
       <div>
-        <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
+        <h3 className="text-muted-foreground mb-2 text-xs font-medium tracking-wider uppercase">
           Por Sector
         </h3>
         <ResponsiveContainer width="100%" height={180}>
@@ -90,7 +111,7 @@ export default function Charts({ obras }: ChartsProps) {
 
       {/* Province Bar Chart */}
       <div>
-        <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
+        <h3 className="text-muted-foreground mb-2 text-xs font-medium tracking-wider uppercase">
           Top 10 Provincias
         </h3>
         <ResponsiveContainer width="100%" height={200}>

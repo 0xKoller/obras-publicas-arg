@@ -8,7 +8,8 @@ import FilterPanel from "./filters/FilterPanel";
 import ObraDetailPanel from "./detail/ObraDetailPanel";
 import StatsCards from "./dashboard/StatsCards";
 import Charts from "./dashboard/Charts";
-import { Loader2 } from "lucide-react";
+import { SidebarSkeleton } from "@/components/ClientAppSkeleton";
+import MapSkeleton from "@/components/map/MapSkeleton";
 import { BUENOS_AIRES_CENTER, DEFAULT_FALLBACK_ZOOM } from "@/lib/constants";
 
 export default function ClientApp() {
@@ -156,19 +157,6 @@ export default function ClientApp() {
     router.replace("/", { scroll: false });
   }, [router]);
 
-  if (loading) {
-    return (
-      <div className="flex flex-1 items-center justify-center">
-        <div className="flex flex-col items-center gap-3">
-          <Loader2 className="text-primary h-8 w-8 animate-spin" />
-          <p className="text-muted-foreground text-sm">
-            Cargando obras publicas...
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   if (error) {
     return (
       <div className="flex flex-1 items-center justify-center">
@@ -195,36 +183,48 @@ export default function ClientApp() {
     <div className="flex min-h-0 flex-1">
       {/* Sidebar */}
       <div className="flex w-80 shrink-0 flex-col gap-4 overflow-y-auto border-r bg-white p-4">
-        <FilterPanel
-          filters={filters}
-          onFiltersChange={setFilters}
-          provinces={uniqueProvinces}
-          sectors={uniqueSectors}
-          statuses={uniqueStatuses}
-          years={uniqueYears}
-          defaultYearRange={defaultYearRange}
-        />
-        <Separator />
-        <StatsCards obras={filteredObras} />
-        <Separator />
-        <Charts obras={filteredObras} />
+        {loading ? (
+          <SidebarSkeleton />
+        ) : (
+          <>
+            <FilterPanel
+              filters={filters}
+              onFiltersChange={setFilters}
+              provinces={uniqueProvinces}
+              sectors={uniqueSectors}
+              statuses={uniqueStatuses}
+              years={uniqueYears}
+              defaultYearRange={defaultYearRange}
+            />
+            <Separator />
+            <StatsCards obras={filteredObras} />
+            <Separator />
+            <Charts obras={filteredObras} />
+          </>
+        )}
       </div>
 
       {/* Map */}
       <div className="relative z-0 flex-1">
-        <MapContainerWrapper
-          obras={filteredObras}
-          onSelectObra={handleSelectObra}
-          initialCenter={
-            userLocation ? [userLocation.lat, userLocation.lng] : undefined
-          }
-          initialZoom={userLocation ? DEFAULT_FALLBACK_ZOOM : undefined}
-          flyTo={flyTo}
-        />
+        {loading ? (
+          <MapSkeleton />
+        ) : (
+          <MapContainerWrapper
+            obras={filteredObras}
+            onSelectObra={handleSelectObra}
+            initialCenter={
+              userLocation ? [userLocation.lat, userLocation.lng] : undefined
+            }
+            initialZoom={userLocation ? DEFAULT_FALLBACK_ZOOM : undefined}
+            flyTo={flyTo}
+          />
+        )}
       </div>
 
       {/* Detail Panel */}
-      <ObraDetailPanel obra={selectedObra} onClose={handleCloseObra} />
+      {!loading && (
+        <ObraDetailPanel obra={selectedObra} onClose={handleCloseObra} />
+      )}
     </div>
   );
 }

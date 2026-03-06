@@ -16,8 +16,8 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
 
   if (loading) {
     return (
-      <div className="h-48 bg-muted rounded-lg flex items-center justify-center">
-        <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+      <div className="bg-muted flex h-48 items-center justify-center rounded-lg">
+        <Loader2 className="text-muted-foreground h-5 w-5 animate-spin" />
       </div>
     );
   }
@@ -26,9 +26,9 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
 
   if (images.length === 0 || validImages.length === 0) {
     return (
-      <div className="h-32 bg-muted/50 rounded-lg flex flex-col items-center justify-center gap-2">
-        <ImageIcon className="h-8 w-8 text-muted-foreground/40" />
-        <p className="text-xs text-muted-foreground">
+      <div className="bg-muted/50 flex h-48 flex-col items-center justify-center gap-2 rounded-lg">
+        <ImageIcon className="text-muted-foreground/40 h-8 w-8" />
+        <p className="text-muted-foreground text-xs">
           No hay imagenes disponibles
         </p>
       </div>
@@ -40,7 +40,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
 
   return (
     <div className="space-y-2">
-      <div className="relative h-48 bg-muted rounded-lg overflow-hidden">
+      <div className="bg-muted relative h-48 overflow-hidden rounded-lg">
         <Image
           src={currentImage.url}
           alt={currentImage.description || "Foto de la obra"}
@@ -66,7 +66,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
                 )
               }
               aria-label="Imagen anterior"
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition-colors"
+              className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-black/50 p-1 text-white transition-colors hover:bg-black/70"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
@@ -75,14 +75,17 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
                 setSelectedIndex((prev) => (prev + 1) % images.length)
               }
               aria-label="Imagen siguiente"
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition-colors"
+              className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-black/50 p-1 text-white transition-colors hover:bg-black/70"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
           </>
         )}
 
-        <div aria-live="polite" className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded-full">
+        <div
+          aria-live="polite"
+          className="absolute right-2 bottom-2 rounded-full bg-black/60 px-2 py-0.5 text-[10px] text-white"
+        >
           {safeIndex + 1} / {images.length}
         </div>
       </div>
@@ -95,7 +98,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
                 key={i}
                 onClick={() => setSelectedIndex(i)}
                 aria-label={`Ver imagen ${i + 1}`}
-                className={`relative shrink-0 w-14 h-10 rounded overflow-hidden border-2 transition-colors ${
+                className={`relative h-10 w-14 shrink-0 overflow-hidden rounded border-2 transition-colors ${
                   i === safeIndex
                     ? "border-primary"
                     : "border-transparent opacity-60 hover:opacity-100"
@@ -108,9 +111,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
                   className="object-cover"
                   sizes="56px"
                   unoptimized
-                  onError={() =>
-                    setImgError((prev) => new Set(prev).add(i))
-                  }
+                  onError={() => setImgError((prev) => new Set(prev).add(i))}
                 />
               </button>
             )
@@ -119,7 +120,7 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
       )}
 
       {currentImage.description && (
-        <p className="text-xs text-muted-foreground italic">
+        <p className="text-muted-foreground text-xs italic">
           {currentImage.description}
         </p>
       )}

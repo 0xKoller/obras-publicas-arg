@@ -7,13 +7,7 @@ import {
   PRESIDENTIAL_PERIODS,
   getPresidentialPeriod,
 } from "@/lib/presidential-periods";
-import {
-  Loader2,
-  Building2,
-  DollarSign,
-  CheckCircle2,
-  X,
-} from "lucide-react";
+import { Loader2, Building2, DollarSign, CheckCircle2, X } from "lucide-react";
 import {
   getStatusColor,
   getStatusIcon,
@@ -28,6 +22,8 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 import PresidentFilter from "./PresidentFilter";
 import ObrasByPresidentChart from "./ObrasByPresidentChart";
 import BudgetByPresidentChart from "./BudgetByPresidentChart";
@@ -37,6 +33,127 @@ import ObrasStartedChart from "./ObrasStartedChart";
 import ObrasFinishedChart from "./ObrasFinishedChart";
 import YearlyTimelineChart from "./YearlyTimelineChart";
 import ObrasTable from "./ObrasTable";
+
+function AnalyticsSkeleton() {
+  return (
+    <main className="bg-secondary/30 flex-1 overflow-y-auto">
+      <div className="mx-auto max-w-7xl space-y-8 px-6 py-8">
+        {/* Title */}
+        <div>
+          <Skeleton className="h-7 w-48" />
+          <Skeleton className="mt-2 h-4 w-80" />
+        </div>
+
+        {/* Filters card */}
+        <div className="border-border/60 space-y-4 rounded-lg border bg-white p-4">
+          {/* President filter - row of 6 president cards */}
+          <div className="flex flex-wrap items-center gap-2">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center gap-1.5 px-3 py-2"
+              >
+                <Skeleton className="h-20 w-20 rounded-xl" />
+                <Skeleton className="h-3 w-14" />
+              </div>
+            ))}
+          </div>
+          {/* Status/Sector/Province filter sections */}
+          <div className="border-border space-y-4 border-t pt-4">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div key={i}>
+                <Skeleton className="mb-1.5 h-3 w-16" />
+                <div className="flex flex-wrap gap-1.5">
+                  {Array.from({ length: 5 + i * 2 }).map((_, j) => (
+                    <Skeleton key={j} className="h-6 w-20 rounded-full" />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Clear filters - always rendered */}
+          <div className="border-border flex items-center justify-end border-t pt-3 opacity-0">
+            <Skeleton className="h-4 w-24" />
+          </div>
+        </div>
+
+        {/* Summary Stats - 3 columns */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div
+              key={i}
+              className="border-border/60 flex items-center gap-3 rounded-lg border bg-white p-4"
+            >
+              <Skeleton className="h-9 w-9 rounded-md" />
+              <div>
+                <Skeleton className="mb-1.5 h-3 w-20" />
+                <Skeleton className="h-6 w-16" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Started/Finished charts - 2 col grid */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div
+              key={i}
+              className="bg-card text-card-foreground rounded-xl border shadow-sm"
+            >
+              <div className="flex flex-col space-y-1.5 p-6">
+                <Skeleton className="h-5 w-48" />
+                <Skeleton className="h-4 w-72" />
+              </div>
+              <div className="p-6 pt-0">
+                <Skeleton className="h-[300px] w-full rounded-md" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Yearly Timeline - full width */}
+        <div className="bg-card text-card-foreground rounded-xl border shadow-sm">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <Skeleton className="h-5 w-48" />
+            <Skeleton className="h-4 w-96" />
+          </div>
+          <div className="p-6 pt-0">
+            <Skeleton className="h-[300px] w-full rounded-md" />
+          </div>
+        </div>
+
+        {/* 4 more charts - 2x2 grid */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div
+              key={i}
+              className="bg-card text-card-foreground rounded-xl border shadow-sm"
+            >
+              <div className="flex flex-col space-y-1.5 p-6">
+                <Skeleton className="h-5 w-48" />
+                <Skeleton className="h-4 w-64" />
+              </div>
+              <div className="p-6 pt-0">
+                <Skeleton className="h-[300px] w-full rounded-md" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Table card */}
+        <div className="bg-card text-card-foreground rounded-xl border shadow-sm">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <Skeleton className="h-5 w-32" />
+            <Skeleton className="h-4 w-72" />
+          </div>
+          <div className="p-6 pt-0">
+            <Skeleton className="h-[400px] w-full rounded-md" />
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
 
 export default function AnalyticsClient() {
   const [obras, setObras] = useState<Obra[]>([]);
@@ -81,9 +198,15 @@ export default function AnalyticsClient() {
   // Available values given all OTHER active filters (excluding the filter's own dimension)
   const availableProvinces = useMemo(() => {
     const filtered = obras.filter((o) => {
-      if (selectedPresident && getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident) return false;
-      if (selectedSectors.length > 0 && !selectedSectors.includes(o.sector)) return false;
-      if (selectedStatuses.length > 0 && !selectedStatuses.includes(o.etapa)) return false;
+      if (
+        selectedPresident &&
+        getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident
+      )
+        return false;
+      if (selectedSectors.length > 0 && !selectedSectors.includes(o.sector))
+        return false;
+      if (selectedStatuses.length > 0 && !selectedStatuses.includes(o.etapa))
+        return false;
       return true;
     });
     return new Set(filtered.map((o) => o.provincia));
@@ -91,9 +214,18 @@ export default function AnalyticsClient() {
 
   const availableSectors = useMemo(() => {
     const filtered = obras.filter((o) => {
-      if (selectedPresident && getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident) return false;
-      if (selectedProvinces.length > 0 && !selectedProvinces.includes(o.provincia)) return false;
-      if (selectedStatuses.length > 0 && !selectedStatuses.includes(o.etapa)) return false;
+      if (
+        selectedPresident &&
+        getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident
+      )
+        return false;
+      if (
+        selectedProvinces.length > 0 &&
+        !selectedProvinces.includes(o.provincia)
+      )
+        return false;
+      if (selectedStatuses.length > 0 && !selectedStatuses.includes(o.etapa))
+        return false;
       return true;
     });
     return new Set(filtered.map((o) => o.sector));
@@ -101,9 +233,18 @@ export default function AnalyticsClient() {
 
   const availableStatuses = useMemo(() => {
     const filtered = obras.filter((o) => {
-      if (selectedPresident && getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident) return false;
-      if (selectedProvinces.length > 0 && !selectedProvinces.includes(o.provincia)) return false;
-      if (selectedSectors.length > 0 && !selectedSectors.includes(o.sector)) return false;
+      if (
+        selectedPresident &&
+        getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident
+      )
+        return false;
+      if (
+        selectedProvinces.length > 0 &&
+        !selectedProvinces.includes(o.provincia)
+      )
+        return false;
+      if (selectedSectors.length > 0 && !selectedSectors.includes(o.sector))
+        return false;
       return true;
     });
     return new Set(filtered.map((o) => o.etapa));
@@ -124,19 +265,25 @@ export default function AnalyticsClient() {
 
   const toggleProvince = (province: string) => {
     setSelectedProvinces((prev) =>
-      prev.includes(province) ? prev.filter((p) => p !== province) : [...prev, province]
+      prev.includes(province)
+        ? prev.filter((p) => p !== province)
+        : [...prev, province]
     );
   };
 
   const toggleSector = (sector: string) => {
     setSelectedSectors((prev) =>
-      prev.includes(sector) ? prev.filter((s) => s !== sector) : [...prev, sector]
+      prev.includes(sector)
+        ? prev.filter((s) => s !== sector)
+        : [...prev, sector]
     );
   };
 
   const toggleStatus = (status: string) => {
     setSelectedStatuses((prev) =>
-      prev.includes(status) ? prev.filter((s) => s !== status) : [...prev, status]
+      prev.includes(status)
+        ? prev.filter((s) => s !== status)
+        : [...prev, status]
     );
   };
 
@@ -147,14 +294,24 @@ export default function AnalyticsClient() {
         getPresidentialPeriod(o.fechaInicio)?.president !== selectedPresident
       )
         return false;
-      if (selectedProvinces.length > 0 && !selectedProvinces.includes(o.provincia)) return false;
+      if (
+        selectedProvinces.length > 0 &&
+        !selectedProvinces.includes(o.provincia)
+      )
+        return false;
       if (selectedSectors.length > 0 && !selectedSectors.includes(o.sector))
         return false;
       if (selectedStatuses.length > 0 && !selectedStatuses.includes(o.etapa))
         return false;
       return true;
     });
-  }, [obras, selectedPresident, selectedProvinces, selectedSectors, selectedStatuses]);
+  }, [
+    obras,
+    selectedPresident,
+    selectedProvinces,
+    selectedSectors,
+    selectedStatuses,
+  ]);
 
   // --- Existing aggregations (use filteredObras) ---
 
@@ -172,8 +329,7 @@ export default function AnalyticsClient() {
           .length,
         Paralizadas: periodObras.filter((o) => o.etapa === "Paralizada").length,
         Otras: periodObras.filter(
-          (o) =>
-            !["Finalizada", "En ejecución", "Paralizada"].includes(o.etapa)
+          (o) => !["Finalizada", "En ejecución", "Paralizada"].includes(o.etapa)
         ).length,
         total: periodObras.length,
       };
@@ -299,49 +455,40 @@ export default function AnalyticsClient() {
   }, [filteredObras]);
 
   if (loading) {
-    return (
-      <div className="flex-1 flex items-center justify-center">
-        <div className="flex flex-col items-center gap-3">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
-          <p className="text-sm text-muted-foreground">
-            Cargando estadisticas...
-          </p>
-        </div>
-      </div>
-    );
+    return <AnalyticsSkeleton />;
   }
 
   if (error) {
     return (
-      <div className="flex-1 flex items-center justify-center">
-        <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 max-w-md text-center">
-          <p className="text-sm text-destructive font-medium">Error: {error}</p>
+      <div className="flex flex-1 items-center justify-center">
+        <div className="bg-destructive/10 border-destructive/20 max-w-md rounded-lg border p-6 text-center">
+          <p className="text-destructive text-sm font-medium">Error: {error}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <main className="flex-1 overflow-y-auto bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+    <main className="bg-secondary/30 flex-1 overflow-y-auto">
+      <div className="mx-auto max-w-7xl space-y-8 px-6 py-8">
         <div>
-          <h2 className="text-2xl font-bold text-gov-navy">Estadisticas</h2>
-          <p className="text-sm text-muted-foreground mt-1">
+          <h2 className="text-gov-navy text-2xl font-bold">Estadisticas</h2>
+          <p className="text-muted-foreground mt-1 text-sm">
             Analisis de obras publicas por periodo presidencial
           </p>
         </div>
 
         {/* Filters */}
-        <div className="rounded-lg border border-border/60 bg-white p-4 space-y-4">
+        <div className="border-border/60 space-y-4 rounded-lg border bg-white p-4">
           <PresidentFilter
             selected={selectedPresident}
             onSelect={setSelectedPresident}
           />
 
-          <div className="border-t border-border pt-4 space-y-4">
+          <div className="border-border space-y-4 border-t pt-4">
             {/* Estado */}
             <div>
-              <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+              <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
                 Estado
               </label>
               <div className="flex flex-wrap gap-1.5">
@@ -370,7 +517,7 @@ export default function AnalyticsClient() {
                       }
                       onClick={() => available && toggleStatus(status)}
                     >
-                      <StatusIcon className="h-3 w-3 mr-1" />
+                      <StatusIcon className="mr-1 h-3 w-3" />
                       {status}
                     </Badge>
                   );
@@ -380,7 +527,7 @@ export default function AnalyticsClient() {
 
             {/* Row 2: Sector (full width) */}
             <div>
-              <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+              <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
                 Sector
               </label>
               <div className="flex flex-wrap gap-1.5">
@@ -409,7 +556,7 @@ export default function AnalyticsClient() {
                       }
                       onClick={() => available && toggleSector(sector)}
                     >
-                      <SectorIcon className="h-3 w-3 mr-1" />
+                      <SectorIcon className="mr-1 h-3 w-3" />
                       {sector}
                     </Badge>
                   );
@@ -419,7 +566,7 @@ export default function AnalyticsClient() {
 
             {/* Provincia (full width) */}
             <div>
-              <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+              <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
                 Provincia
               </label>
               <div className="flex flex-wrap gap-1.5">
@@ -454,58 +601,63 @@ export default function AnalyticsClient() {
             </div>
           </div>
 
-          {hasActiveFilters && (
-            <div className="border-t border-border pt-3 flex items-center justify-end">
-              <button
-                onClick={clearAllFilters}
-                className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 font-medium"
-              >
-                <X className="h-3 w-3" />
-                Limpiar filtros
-              </button>
-            </div>
-          )}
+          <div
+            className={cn(
+              "border-border flex items-center justify-end border-t pt-3 transition-opacity",
+              hasActiveFilters ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+            aria-hidden={!hasActiveFilters}
+          >
+            <button
+              onClick={clearAllFilters}
+              className="text-primary hover:text-primary/80 flex items-center gap-1 text-xs font-medium"
+              tabIndex={hasActiveFilters ? 0 : -1}
+            >
+              <X className="h-3 w-3" />
+              Limpiar filtros
+            </button>
+          </div>
         </div>
 
         {/* Summary Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="rounded-lg border border-border/60 bg-white p-4 flex items-center gap-3">
-            <div className="w-9 h-9 rounded-md bg-blue-50 flex items-center justify-center">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="border-border/60 flex items-center gap-3 rounded-lg border bg-white p-4">
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-blue-50">
               <Building2 className="h-4 w-4 text-blue-600" />
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <p className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
                 Total Obras
               </p>
-              <p className="text-xl font-bold text-gov-navy">
+              <p className="text-gov-navy text-xl font-bold">
                 {filteredObras.length.toLocaleString()}
               </p>
             </div>
           </div>
-          <div className="rounded-lg border border-border/60 bg-white p-4 flex items-center gap-3">
-            <div className="w-9 h-9 rounded-md bg-emerald-50 flex items-center justify-center">
+          <div className="border-border/60 flex items-center gap-3 rounded-lg border bg-white p-4">
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-emerald-50">
               <DollarSign className="h-4 w-4 text-emerald-600" />
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <p className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
                 Presupuesto Total
               </p>
-              <p className="text-xl font-bold text-gov-navy">
+              <p className="text-gov-navy text-xl font-bold">
                 {formatARS(summaryStats.totalBudget)}
               </p>
             </div>
           </div>
-          <div className="rounded-lg border border-border/60 bg-white p-4 flex items-center gap-3">
-            <div className="w-9 h-9 rounded-md bg-violet-50 flex items-center justify-center">
+          <div className="border-border/60 flex items-center gap-3 rounded-lg border bg-white p-4">
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-violet-50">
               <CheckCircle2 className="h-4 w-4 text-violet-600" />
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <p className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
                 Tasa de Finalizacion
               </p>
-              <p className="text-xl font-bold text-gov-navy">
+              <p className="text-gov-navy text-xl font-bold">
                 {summaryStats.completionRate}%{" "}
-                <span className="text-sm font-normal text-muted-foreground">
+                <span className="text-muted-foreground text-sm font-normal">
                   ({summaryStats.completed.toLocaleString()})
                 </span>
               </p>
@@ -514,7 +666,7 @@ export default function AnalyticsClient() {
         </div>
 
         {/* Obras Started vs Finished */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>Obras Iniciadas por Presidente</CardTitle>
@@ -546,8 +698,8 @@ export default function AnalyticsClient() {
           <CardHeader>
             <CardTitle>Obras Iniciadas por Año</CardTitle>
             <CardDescription>
-              Linea temporal de obras publicas iniciadas cada año, coloreadas por
-              periodo presidencial
+              Linea temporal de obras publicas iniciadas cada año, coloreadas
+              por periodo presidencial
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -556,7 +708,7 @@ export default function AnalyticsClient() {
         </Card>
 
         {/* Existing Charts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>Obras por Estado y Presidente</CardTitle>
