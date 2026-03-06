@@ -16,6 +16,20 @@ export interface ObraRaw {
   programa_infraestructura: string;
   entidadejecutoranombre: string;
   tipomoneda: string;
+  numeroobra: string;
+  codigobapin: string;
+  duracionobrasdias: string;
+  objetivogeneral: string;
+  codigo_bahra: string;
+  organismo_financiador_1: string;
+  organismo_financiador_2: string;
+  organismo_financiador_prestamo: string;
+  contraparte_key: string;
+  contraparte_val: string;
+  contraparte_cuit: string;
+  contraparte_modalidad: string;
+  tag_accionclimatica: string;
+  tag_ods_incidencia: string;
 }
 
 export interface Obra {
@@ -36,8 +50,27 @@ export interface Obra {
   programa: string;
   ejecutor: string;
   moneda: string;
+  numeroObra: string;
+  codigoBapin: string;
+  duracionDias: number;
+  objetivoGeneral: string;
+  codigoBahra: string;
+  financiador1: string;
+  financiador2: string;
+  financiadorPrestamo: string;
+  contraparteKey: string;
+  contraparteVal: string;
+  contraparteCuit: string;
+  contraparteModalidad: string;
+  tagAccionClimatica: string[];
+  tagOdsIncidencia: string[];
   lat: number;
   lng: number;
+}
+
+export interface ObraImage {
+  url: string;
+  description: string;
 }
 
 export interface DepartmentCentroid {
