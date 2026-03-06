@@ -10,6 +10,7 @@ import StatsCards from "./dashboard/StatsCards";
 import Charts from "./dashboard/Charts";
 import { SidebarSkeleton } from "@/components/ClientAppSkeleton";
 import MapSkeleton from "@/components/map/MapSkeleton";
+import { BUENOS_AIRES_CENTER, DEFAULT_FALLBACK_ZOOM } from "@/lib/constants";
 
 export default function ClientApp() {
   const searchParams = useSearchParams();
@@ -49,7 +50,15 @@ export default function ClientApp() {
         setObras(obrasData);
         if (geoData) {
           setUserLocation(geoData);
+          setLoading(false);
         } else if ("geolocation" in navigator) {
+          // Default to Buenos Aires immediately so the map renders centered there
+          setUserLocation({
+            lat: BUENOS_AIRES_CENTER[0],
+            lng: BUENOS_AIRES_CENTER[1],
+          });
+          setLoading(false);
+          // Override with actual location if user grants permission
           navigator.geolocation.getCurrentPosition(
             (pos) => {
               setUserLocation({
@@ -57,10 +66,16 @@ export default function ClientApp() {
                 lng: pos.coords.longitude,
               });
             },
-            () => {} // User denied or error — stay on default view
+            () => {} // Keep Buenos Aires default
           );
+        } else {
+          // No geolocation API available — default to Buenos Aires
+          setUserLocation({
+            lat: BUENOS_AIRES_CENTER[0],
+            lng: BUENOS_AIRES_CENTER[1],
+          });
+          setLoading(false);
         }
-        setLoading(false);
       })
       .catch((err) => {
         setError(err.message);
@@ -200,7 +215,7 @@ export default function ClientApp() {
             initialCenter={
               userLocation ? [userLocation.lat, userLocation.lng] : undefined
             }
-            initialZoom={userLocation ? 10 : undefined}
+            initialZoom={userLocation ? DEFAULT_FALLBACK_ZOOM : undefined}
             flyTo={flyTo}
           />
         )}
