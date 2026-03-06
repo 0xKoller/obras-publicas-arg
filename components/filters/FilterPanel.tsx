@@ -1,7 +1,13 @@
 "use client";
 
 import type { FilterState } from "@/lib/types";
-import { getStatusColor, getStatusIcon, getSectorIcon, getSectorColor } from "@/lib/constants";
+import {
+  getStatusColor,
+  getStatusIcon,
+  getSectorIcon,
+  getSectorColor,
+} from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import {
   Select,
   SelectContent,
@@ -68,22 +74,25 @@ export default function FilterPanel({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-gov-navy">
+        <h2 className="text-gov-navy text-xs font-semibold tracking-wider uppercase">
           Filtros
         </h2>
-        {hasFilters && (
-          <button
-            onClick={clearAll}
-            className="text-xs text-primary hover:text-primary/80 font-medium"
-          >
-            Limpiar filtros
-          </button>
-        )}
+        <button
+          onClick={clearAll}
+          className={cn(
+            "text-primary hover:text-primary/80 text-xs font-medium transition-opacity",
+            hasFilters ? "opacity-100" : "pointer-events-none opacity-0"
+          )}
+          tabIndex={hasFilters ? 0 : -1}
+          aria-hidden={!hasFilters}
+        >
+          Limpiar filtros
+        </button>
       </div>
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
         <Input
           type="text"
           placeholder="Buscar obra..."
@@ -98,7 +107,7 @@ export default function FilterPanel({
 
       {/* Province */}
       <div>
-        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+        <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
           Provincia
         </label>
         <Select
@@ -126,14 +135,12 @@ export default function FilterPanel({
 
       {/* Year Range */}
       <div>
-        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+        <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
           Periodo
         </label>
         <div className="flex items-center gap-2">
           <Select
-            value={
-              filters.yearRange ? String(filters.yearRange[0]) : "all"
-            }
+            value={filters.yearRange ? String(filters.yearRange[0]) : "all"}
             onValueChange={(v) => {
               if (v === "all") {
                 onFiltersChange({ ...filters, yearRange: null });
@@ -161,11 +168,9 @@ export default function FilterPanel({
               ))}
             </SelectContent>
           </Select>
-          <span className="text-xs text-muted-foreground shrink-0">a</span>
+          <span className="text-muted-foreground shrink-0 text-xs">a</span>
           <Select
-            value={
-              filters.yearRange ? String(filters.yearRange[1]) : "all"
-            }
+            value={filters.yearRange ? String(filters.yearRange[1]) : "all"}
             onValueChange={(v) => {
               if (v === "all") {
                 onFiltersChange({ ...filters, yearRange: null });
@@ -198,7 +203,7 @@ export default function FilterPanel({
 
       {/* Status */}
       <div>
-        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+        <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
           Estado
         </label>
         <div className="flex flex-wrap gap-1.5">
@@ -213,7 +218,11 @@ export default function FilterPanel({
                 className="cursor-pointer text-xs font-medium"
                 style={
                   selected
-                    ? { backgroundColor: color, borderColor: color, color: "white" }
+                    ? {
+                        backgroundColor: color,
+                        borderColor: color,
+                        color: "white",
+                      }
                     : { borderColor: color, color }
                 }
                 role="checkbox"
@@ -227,7 +236,7 @@ export default function FilterPanel({
                   }
                 }}
               >
-                <StatusIcon className="h-3 w-3 mr-1" />
+                <StatusIcon className="mr-1 h-3 w-3" />
                 {status}
               </Badge>
             );
@@ -237,7 +246,7 @@ export default function FilterPanel({
 
       {/* Sector */}
       <div>
-        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5 block">
+        <label className="text-muted-foreground mb-1.5 block text-xs font-medium tracking-wider uppercase">
           Sector
         </label>
         <div className="flex flex-wrap gap-1.5">
@@ -252,7 +261,11 @@ export default function FilterPanel({
                 className="cursor-pointer text-xs font-medium"
                 style={
                   selected
-                    ? { backgroundColor: color, borderColor: color, color: "white" }
+                    ? {
+                        backgroundColor: color,
+                        borderColor: color,
+                        color: "white",
+                      }
                     : { borderColor: color, color }
                 }
                 role="checkbox"
@@ -266,7 +279,7 @@ export default function FilterPanel({
                   }
                 }}
               >
-                <SectorIcon className="h-3 w-3 mr-1" />
+                <SectorIcon className="mr-1 h-3 w-3" />
                 {sector}
               </Badge>
             );

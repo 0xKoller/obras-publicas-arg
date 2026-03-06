@@ -1,18 +1,17 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import ClientApp from "@/components/ClientApp";
+import ClientAppSkeleton from "@/components/ClientAppSkeleton";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { fetchObras } from "@/lib/data/fetch-obras";
 
 const defaultMetadata: Metadata = {
   title: "Mapa de Obras Publicas - Argentina",
-  description:
-    "Visualizacion interactiva de las obras publicas de Argentina",
+  description: "Visualizacion interactiva de las obras publicas de Argentina",
   openGraph: {
     title: "Mapa de Obras Publicas - Argentina",
-    description:
-      "Visualizacion interactiva de las obras publicas de Argentina",
+    description: "Visualizacion interactiva de las obras publicas de Argentina",
     type: "website",
     locale: "es_AR",
     siteName: "Mapa de Obras Publicas",
@@ -20,8 +19,7 @@ const defaultMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mapa de Obras Publicas - Argentina",
-    description:
-      "Visualizacion interactiva de las obras publicas de Argentina",
+    description: "Visualizacion interactiva de las obras publicas de Argentina",
   },
 };
 
@@ -71,9 +69,9 @@ export async function generateMetadata({
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <Suspense>
+      <Suspense fallback={<ClientAppSkeleton />}>
         <ClientApp />
       </Suspense>
       <Footer />
