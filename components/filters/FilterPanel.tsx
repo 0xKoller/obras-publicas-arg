@@ -1,7 +1,7 @@
 "use client";
 
 import type { FilterState } from "@/lib/types";
-import { getStatusColor } from "@/lib/constants";
+import { getStatusColor, getStatusIcon, getSectorIcon, getSectorColor } from "@/lib/constants";
 import {
   Select,
   SelectContent,
@@ -201,23 +201,27 @@ export default function FilterPanel({
           Estado
         </label>
         <div className="flex flex-wrap gap-1.5">
-          {statuses.map((status) => (
-            <Badge
-              key={status}
-              variant={
-                filters.statuses.includes(status) ? "default" : "outline"
-              }
-              className="cursor-pointer text-xs font-medium"
-              style={
-                filters.statuses.includes(status)
-                  ? { backgroundColor: getStatusColor(status), borderColor: getStatusColor(status) }
-                  : undefined
-              }
-              onClick={() => toggleStatus(status)}
-            >
-              {status}
-            </Badge>
-          ))}
+          {statuses.map((status) => {
+            const StatusIcon = getStatusIcon(status);
+            const color = getStatusColor(status);
+            const selected = filters.statuses.includes(status);
+            return (
+              <Badge
+                key={status}
+                variant={selected ? "default" : "outline"}
+                className="cursor-pointer text-xs font-medium"
+                style={
+                  selected
+                    ? { backgroundColor: color, borderColor: color, color: "white" }
+                    : { borderColor: color, color }
+                }
+                onClick={() => toggleStatus(status)}
+              >
+                <StatusIcon className="h-3 w-3 mr-1" />
+                {status}
+              </Badge>
+            );
+          })}
         </div>
       </div>
 
@@ -227,18 +231,27 @@ export default function FilterPanel({
           Sector
         </label>
         <div className="flex flex-wrap gap-1.5">
-          {sectors.map((sector) => (
-            <Badge
-              key={sector}
-              variant={
-                filters.sectors.includes(sector) ? "default" : "outline"
-              }
-              className="cursor-pointer text-xs font-medium"
-              onClick={() => toggleSector(sector)}
-            >
-              {sector}
-            </Badge>
-          ))}
+          {sectors.map((sector) => {
+            const SectorIcon = getSectorIcon(sector);
+            const color = getSectorColor(sector);
+            const selected = filters.sectors.includes(sector);
+            return (
+              <Badge
+                key={sector}
+                variant={selected ? "default" : "outline"}
+                className="cursor-pointer text-xs font-medium"
+                style={
+                  selected
+                    ? { backgroundColor: color, borderColor: color, color: "white" }
+                    : { borderColor: color, color }
+                }
+                onClick={() => toggleSector(sector)}
+              >
+                <SectorIcon className="h-3 w-3 mr-1" />
+                {sector}
+              </Badge>
+            );
+          })}
         </div>
       </div>
     </div>
