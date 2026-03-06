@@ -155,6 +155,9 @@ export function getSectorSvg(sector: string): string {
 }
 
 export function formatARS(amount: number): string {
+  if (amount >= 1_000_000_000_000) {
+    return `$${(amount / 1_000_000_000_000).toFixed(1)}T`;
+  }
   if (amount >= 1_000_000_000) {
     return `$${(amount / 1_000_000_000).toFixed(1)}B`;
   }

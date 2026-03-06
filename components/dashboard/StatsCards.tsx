@@ -3,7 +3,6 @@
 import { useMemo } from "react";
 import type { Obra } from "@/lib/types";
 import { formatARS } from "@/lib/constants";
-import { Card, CardContent } from "@/components/ui/card";
 import { Building2, DollarSign, TrendingUp, CheckCircle2 } from "lucide-react";
 
 interface StatsCardsProps {
@@ -29,40 +28,51 @@ export default function StatsCards({ obras }: StatsCardsProps) {
       label: "Total Obras",
       value: obras.length.toLocaleString(),
       icon: Building2,
+      iconBg: "bg-blue-50",
+      iconColor: "text-blue-600",
     },
     {
       label: "Presupuesto",
       value: formatARS(stats.totalBudget),
       icon: DollarSign,
+      iconBg: "bg-emerald-50",
+      iconColor: "text-emerald-600",
     },
     {
       label: "Avance Promedio",
       value: `${stats.avgProgress.toFixed(1)}%`,
       icon: TrendingUp,
+      iconBg: "bg-amber-50",
+      iconColor: "text-amber-600",
     },
     {
       label: "Finalizadas",
       value: stats.completed.toLocaleString(),
       icon: CheckCircle2,
+      iconBg: "bg-violet-50",
+      iconColor: "text-violet-600",
     },
   ];
 
   return (
     <div className="grid grid-cols-2 gap-2">
       {cards.map((card) => (
-        <Card key={card.label} className="border-l-4 border-l-gov-celeste">
-          <CardContent className="p-3">
-            <div className="flex items-start gap-2">
-              <card.icon className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              <div>
-                <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                  {card.label}
-                </p>
-                <p className="text-lg font-bold text-gov-navy">{card.value}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <div
+          key={card.label}
+          className="rounded-lg border border-border/60 bg-white p-3 flex flex-col gap-2"
+        >
+          <div className={`w-7 h-7 rounded-md ${card.iconBg} flex items-center justify-center`}>
+            <card.icon className={`h-3.5 w-3.5 ${card.iconColor}`} />
+          </div>
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground leading-tight">
+              {card.label}
+            </p>
+            <p className="text-lg font-bold text-gov-navy leading-tight mt-0.5">
+              {card.value}
+            </p>
+          </div>
+        </div>
       ))}
     </div>
   );
