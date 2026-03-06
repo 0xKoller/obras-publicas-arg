@@ -17,6 +17,7 @@ export default function ClientApp() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedObra, setSelectedObra] = useState<Obra | null>(null);
+  const [flyTo, setFlyTo] = useState<[number, number] | null>(null);
   const [userLocation, setUserLocation] = useState<{
     lat: number;
     lng: number;
@@ -66,13 +67,18 @@ export default function ClientApp() {
       });
   }, []);
 
-  // Auto-select obra from URL query param after data loads
+  // Auto-select obra from URL query param (?obra=ID) and fly to it
   useEffect(() => {
     if (obras.length === 0) return;
     const obraId = searchParams.get("obra");
     if (!obraId) return;
     const match = obras.find((o) => o.id === obraId);
-    if (match) setSelectedObra(match);
+    if (match) {
+      setSelectedObra(match);
+      if (match.lat && match.lng) {
+        setFlyTo([match.lat, match.lng]);
+      }
+    }
   }, [obras, searchParams]);
 
   const filteredObras = useMemo(() => {
@@ -196,6 +202,7 @@ export default function ClientApp() {
               : undefined
           }
           initialZoom={userLocation ? 10 : undefined}
+          flyTo={flyTo}
         />
       </div>
 

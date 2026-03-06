@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect, useRef } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -33,6 +33,25 @@ interface LeafletMapProps {
   onSelectObra: (obra: Obra) => void;
   initialCenter?: [number, number];
   initialZoom?: number;
+  flyTo?: [number, number] | null;
+}
+
+function FlyToLocation({ target }: { target: [number, number] | null }) {
+  const map = useMap();
+  const prevTarget = useRef<[number, number] | null>(null);
+
+  useEffect(() => {
+    if (
+      target &&
+      (prevTarget.current?.[0] !== target[0] ||
+        prevTarget.current?.[1] !== target[1])
+    ) {
+      map.flyTo(target, 15, { duration: 1.5 });
+      prevTarget.current = target;
+    }
+  }, [map, target]);
+
+  return null;
 }
 
 function FitBounds({ obras }: { obras: Obra[] }) {
@@ -118,6 +137,7 @@ export default function LeafletMap({
   onSelectObra,
   initialCenter,
   initialZoom,
+  flyTo,
 }: LeafletMapProps) {
   const getIcon = useMemo(() => {
     const cache = new Map<string, L.DivIcon>();
@@ -149,6 +169,7 @@ export default function LeafletMap({
         updateWhenIdle={true}
         keepBuffer={2}
       />
+      <FlyToLocation target={flyTo ?? null} />
       <FitBounds obras={obras} />
       <ViewportMarkers
         obras={obras}
