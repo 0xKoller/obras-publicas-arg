@@ -91,6 +91,7 @@ export default function FilterPanel({
           onChange={(e) =>
             onFiltersChange({ ...filters, searchQuery: e.target.value })
           }
+          aria-label="Buscar obra por nombre"
           className="pl-9"
         />
       </div>
@@ -215,6 +216,8 @@ export default function FilterPanel({
                     ? { backgroundColor: color, borderColor: color, color: "white" }
                     : { borderColor: color, color }
                 }
+                role="checkbox"
+                aria-checked={selected}
                 onClick={() => toggleStatus(status)}
               >
                 <StatusIcon className="h-3 w-3 mr-1" />
@@ -245,6 +248,8 @@ export default function FilterPanel({
                     ? { backgroundColor: color, borderColor: color, color: "white" }
                     : { borderColor: color, color }
                 }
+                role="checkbox"
+                aria-checked={selected}
                 onClick={() => toggleSector(sector)}
               >
                 <SectorIcon className="h-3 w-3 mr-1" />

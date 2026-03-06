@@ -160,6 +160,7 @@ export default function LeafletMap({
       maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
       className="h-full w-full"
       scrollWheelZoom={true}
+      aria-label="Mapa interactivo de obras publicas de Argentina"
     >
       <TileLayer
         attribution={TILE_ATTRIBUTION}
