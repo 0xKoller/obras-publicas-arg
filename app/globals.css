@@ -104,3 +104,81 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Leaflet Marker Styles */
+.obra-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.obra-marker-inner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2.5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.obra-marker-inner:hover {
+  transform: scale(1.15);
+}
+
+.obra-marker-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Cluster markers */
+.obra-cluster {
+  background: transparent !important;
+  border: none !important;
+}
+
+.obra-cluster-inner {
+  border-radius: 50%;
+  background-color: #0B2D45;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.obra-cluster-inner:hover {
+  transform: scale(1.1);
+}
+
+.obra-cluster-inner span {
+  color: white;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.obra-cluster-inner.cluster-small {
+  width: 36px;
+  height: 36px;
+}
+.obra-cluster-inner.cluster-small span {
+  font-size: 12px;
+}
+
+.obra-cluster-inner.cluster-medium {
+  width: 44px;
+  height: 44px;
+}
+.obra-cluster-inner.cluster-medium span {
+  font-size: 14px;
+}
+
+.obra-cluster-inner.cluster-large {
+  width: 52px;
+  height: 52px;
+}
+.obra-cluster-inner.cluster-large span {
+  font-size: 16px;
+}
