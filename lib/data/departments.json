@@ -1,0 +1,2118 @@
+{
+  "buenos aires|adolfo gonzales chaves": {
+    "lat": -37.9646159068483,
+    "lng": -60.2482821323384
+  },
+  "entre rios|concordia": {
+    "lat": -31.2902983724746,
+    "lng": -58.2378696898985
+  },
+  "entre rios|federal": {
+    "lat": -30.9924267798293,
+    "lng": -58.8918600477175
+  },
+  "entre rios|gualeguaychu": {
+    "lat": -33.0223490410459,
+    "lng": -58.7858051710614
+  },
+  "entre rios|islas del ibicuy": {
+    "lat": -33.6249961546235,
+    "lng": -58.9338958542555
+  },
+  "entre rios|victoria": {
+    "lat": -32.7839424597941,
+    "lng": -60.2180700308372
+  },
+  "entre rios|diamante": {
+    "lat": -32.228040549074,
+    "lng": -60.5239335893593
+  },
+  "entre rios|uruguay": {
+    "lat": -32.4477599400377,
+    "lng": -58.5842252100111
+  },
+  "entre rios|parana": {
+    "lat": -31.6952294494901,
+    "lng": -60.0411744815271
+  },
+  "buenos aires|saladillo": {
+    "lat": -35.676806451923,
+    "lng": -59.7026607444531
+  },
+  "buenos aires|las flores": {
+    "lat": -36.015826657022,
+    "lng": -59.1764609497072
+  },
+  "buenos aires|rojas": {
+    "lat": -34.1928173894529,
+    "lng": -60.7880234647739
+  },
+  "buenos aires|escobar": {
+    "lat": -34.3286828340822,
+    "lng": -58.7711786108511
+  },
+  "buenos aires|jose c. paz": {
+    "lat": -34.511853162718,
+    "lng": -58.7776345982883
+  },
+  "buenos aires|bahia blanca": {
+    "lat": -38.5841892126256,
+    "lng": -62.1694174494415
+  },
+  "buenos aires|san antonio de areco": {
+    "lat": -34.2207575658705,
+    "lng": -59.5194434817548
+  },
+  "buenos aires|maipu": {
+    "lat": -36.886933208215,
+    "lng": -57.5861191040468
+  },
+  "buenos aires|general alvarado": {
+    "lat": -38.2026277127362,
+    "lng": -58.0718053725136
+  },
+  "buenos aires|general pueyrredon": {
+    "lat": -37.9656831422541,
+    "lng": -57.743028347627
+  },
+  "buenos aires|mar chiquita": {
+    "lat": -37.4986405981654,
+    "lng": -57.6432660560016
+  },
+  "buenos aires|villa gesell": {
+    "lat": -37.3670719558785,
+    "lng": -57.0633978822493
+  },
+  "buenos aires|pinamar": {
+    "lat": -37.1110742904936,
+    "lng": -56.8702834122236
+  },
+  "buenos aires|general lavalle": {
+    "lat": -36.650750377237,
+    "lng": -56.9410029895247
+  },
+  "buenos aires|la costa": {
+    "lat": -36.6971678213727,
+    "lng": -56.7159402751909
+  },
+  "buenos aires|magdalena": {
+    "lat": -35.1851030703307,
+    "lng": -57.6861279818118
+  },
+  "corrientes|sauce": {
+    "lat": -29.9995030631702,
+    "lng": -58.7949968561603
+  },
+  "buenos aires|vicente lopez": {
+    "lat": -34.52653142362,
+    "lng": -58.5044865130649
+  },
+  "salta|la vina": {
+    "lat": -25.4471786730855,
+    "lng": -65.5805831392571
+  },
+  "buenos aires|rauch": {
+    "lat": -36.5721944489319,
+    "lng": -58.9441413666159
+  },
+  "salta|metan": {
+    "lat": -25.4252109663753,
+    "lng": -64.5880714654829
+  },
+  "salta|molinos": {
+    "lat": -25.5643165283563,
+    "lng": -66.4548727525442
+  },
+  "chaco|o'higgins": {
+    "lat": -27.2556537688374,
+    "lng": -60.6799749172166
+  },
+  "buenos aires|moreno": {
+    "lat": -34.6106807864965,
+    "lng": -58.8108985084565
+  },
+  "buenos aires|la matanza": {
+    "lat": -34.7703481015398,
+    "lng": -58.6254456945004
+  },
+  "buenos aires|tandil": {
+    "lat": -37.3364293166464,
+    "lng": -59.1819827896233
+  },
+  "buenos aires|coronel suarez": {
+    "lat": -37.534856250067,
+    "lng": -61.8890922422146
+  },
+  "la rioja|chamical": {
+    "lat": -30.1676450229169,
+    "lng": -65.9564977168655
+  },
+  "chubut|futaleufu": {
+    "lat": -43.0705971248375,
+    "lng": -71.4554653748233
+  },
+  "santa cruz|rio chico": {
+    "lat": -48.2873290195571,
+    "lng": -71.113837498627
+  },
+  "rio negro|san antonio": {
+    "lat": -40.9526636914294,
+    "lng": -65.3712443332326
+  },
+  "santiago del estero|alberdi": {
+    "lat": -26.5210423501695,
+    "lng": -62.7280139284021
+  },
+  "santiago del estero|juan felipe ibarra": {
+    "lat": -28.0394929915456,
+    "lng": -62.5443747130478
+  },
+  "santiago del estero|general taboada": {
+    "lat": -28.5683250686056,
+    "lng": -62.3387633833787
+  },
+  "buenos aires|salliquelo": {
+    "lat": -36.6717775352133,
+    "lng": -63.0479735266054
+  },
+  "buenos aires|berazategui": {
+    "lat": -34.8182447703794,
+    "lng": -58.155461508679
+  },
+  "salta|general guemes": {
+    "lat": -24.7646021168635,
+    "lng": -64.9560620821107
+  },
+  "salta|san carlos": {
+    "lat": -25.8295042903902,
+    "lng": -66.1746708204562
+  },
+  "buenos aires|general paz": {
+    "lat": -35.466183010272,
+    "lng": -58.389651959253
+  },
+  "buenos aires|general guido": {
+    "lat": -36.6660345415851,
+    "lng": -57.9957365952016
+  },
+  "buenos aires|general juan madariaga": {
+    "lat": -37.1535157186092,
+    "lng": -57.2306605949345
+  },
+  "santa cruz|lago argentino": {
+    "lat": -49.8364881436802,
+    "lng": -72.06547133431
+  },
+  "santiago del estero|rivadavia": {
+    "lat": -30.0205069976617,
+    "lng": -62.280260406999
+  },
+  "santiago del estero|ojo de agua": {
+    "lat": -29.3043766197306,
+    "lng": -64.0144967880943
+  },
+  "santiago del estero|choya": {
+    "lat": -28.7541678003854,
+    "lng": -64.7638924389835
+  },
+  "san luis|gobernador dupuy": {
+    "lat": -35.3684506230675,
+    "lng": -65.809487372821
+  },
+  "salta|cachi": {
+    "lat": -25.038755786337,
+    "lng": -66.2026200885047
+  },
+  "salta|chicoana": {
+    "lat": -25.1514413324719,
+    "lng": -65.6063327574043
+  },
+  "chubut|gaiman": {
+    "lat": -43.2725140893505,
+    "lng": -66.1720705793314
+  },
+  "chubut|rawson": {
+    "lat": -43.1373292631623,
+    "lng": -65.0757170605931
+  },
+  "la rioja|general lamadrid": {
+    "lat": -28.7904386774179,
+    "lng": -68.6975444932226
+  },
+  "san luis|ayacucho": {
+    "lat": -32.1657217092103,
+    "lng": -66.5423618070089
+  },
+  "chaco|12 de octubre": {
+    "lat": -27.3333760774448,
+    "lng": -61.4758065480051
+  },
+  "cordoba|tulumba": {
+    "lat": -30.2195169248248,
+    "lng": -63.8287887197042
+  },
+  "cordoba|cruz del eje": {
+    "lat": -30.6567576546802,
+    "lng": -65.0782065927095
+  },
+  "cordoba|punilla": {
+    "lat": -31.2187582835824,
+    "lng": -64.5858722176043
+  },
+  "ciudad autonoma de buenos aires|comuna 6": {
+    "lat": -34.6168433901026,
+    "lng": -58.4435682279951
+  },
+  "mendoza|santa rosa": {
+    "lat": -33.6169989146657,
+    "lng": -67.9638561142682
+  },
+  "chaco|general guemes": {
+    "lat": -25.212576905898,
+    "lng": -61.3344270231873
+  },
+  "la rioja|general ortiz de ocampo": {
+    "lat": -31.0067607030974,
+    "lng": -66.0589849758729
+  },
+  "cordoba|general roca": {
+    "lat": -34.6231276675475,
+    "lng": -64.3730221441911
+  },
+  "formosa|pilagas": {
+    "lat": -25.1053773069172,
+    "lng": -58.6616277481182
+  },
+  "formosa|laishi": {
+    "lat": -26.4675822193402,
+    "lng": -58.5654632415076
+  },
+  "mendoza|rivadavia": {
+    "lat": -33.4170768899779,
+    "lng": -68.6049732994365
+  },
+  "buenos aires|tornquist": {
+    "lat": -38.2576421634805,
+    "lng": -62.2905659977374
+  },
+  "mendoza|la paz": {
+    "lat": -33.7012853202088,
+    "lng": -67.2497236922759
+  },
+  "buenos aires|coronel pringles": {
+    "lat": -38.1479172688233,
+    "lng": -61.2644174529926
+  },
+  "rio negro|conesa": {
+    "lat": -40.1487161931233,
+    "lng": -64.3049127228304
+  },
+  "buenos aires|villarino": {
+    "lat": -39.1285652325867,
+    "lng": -62.7245989548872
+  },
+  "formosa|pirane": {
+    "lat": -25.7672913544641,
+    "lng": -59.1592563969217
+  },
+  "buenos aires|general pinto": {
+    "lat": -34.6696214541604,
+    "lng": -62.0398536742269
+  },
+  "buenos aires|san cayetano": {
+    "lat": -38.3890731972465,
+    "lng": -59.5863264400332
+  },
+  "buenos aires|tres arroyos": {
+    "lat": -38.5118142752579,
+    "lng": -60.2374173247047
+  },
+  "buenos aires|coronel dorrego": {
+    "lat": -38.6708176079735,
+    "lng": -61.0955505728699
+  },
+  "buenos aires|necochea": {
+    "lat": -38.2554110045679,
+    "lng": -59.1673869468897
+  },
+  "la rioja|independencia": {
+    "lat": -30.1144556417024,
+    "lng": -67.3355098029644
+  },
+  "buenos aires|chascomus": {
+    "lat": -35.6186883086057,
+    "lng": -57.9039810685242
+  },
+  "buenos aires|punta indio": {
+    "lat": -35.4260558765566,
+    "lng": -57.3992340402061
+  },
+  "jujuy|el carmen": {
+    "lat": -24.4475372667752,
+    "lng": -65.1012859046503
+  },
+  "cordoba|santa maria": {
+    "lat": -31.7097123126909,
+    "lng": -64.3059021632813
+  },
+  "rio negro|valcheta": {
+    "lat": -40.9744584304307,
+    "lng": -66.3108907979663
+  },
+  "la rioja|arauco": {
+    "lat": -28.5330436663011,
+    "lng": -66.7191026010202
+  },
+  "buenos aires|lezama": {
+    "lat": -35.8492083919939,
+    "lng": -57.8948443895452
+  },
+  "buenos aires|campana": {
+    "lat": -34.1383889592817,
+    "lng": -58.8829573786215
+  },
+  "santa cruz|magallanes": {
+    "lat": -48.8383418227095,
+    "lng": -68.4681621290535
+  },
+  "santa cruz|corpen aike": {
+    "lat": -49.9474837008291,
+    "lng": -69.4469507226845
+  },
+  "cordoba|minas": {
+    "lat": -31.0350313100891,
+    "lng": -65.4119724397194
+  },
+  "cordoba|san alberto": {
+    "lat": -31.7080283283874,
+    "lng": -65.1565147370037
+  },
+  "cordoba|rio segundo": {
+    "lat": -31.7331087895549,
+    "lng": -63.4748555205649
+  },
+  "cordoba|san justo": {
+    "lat": -31.242567096662,
+    "lng": -62.5275890566991
+  },
+  "cordoba|union": {
+    "lat": -32.8783816611385,
+    "lng": -62.7915970558691
+  },
+  "cordoba|tercero arriba": {
+    "lat": -32.2876800226932,
+    "lng": -63.77900489607
+  },
+  "salta|cerrillos": {
+    "lat": -24.9885439364757,
+    "lng": -65.4038161087861
+  },
+  "cordoba|rio cuarto": {
+    "lat": -33.330534188986,
+    "lng": -64.4931343088767
+  },
+  "mendoza|tupungato": {
+    "lat": -33.2934009869539,
+    "lng": -69.2962859030556
+  },
+  "rio negro|9 de julio": {
+    "lat": -40.9255514713631,
+    "lng": -67.4574916560521
+  },
+  "rio negro|norquinco": {
+    "lat": -41.7398229279456,
+    "lng": -70.4011459093449
+  },
+  "mendoza|san rafael": {
+    "lat": -34.9454490543358,
+    "lng": -68.384239783985
+  },
+  "salta|anta": {
+    "lat": -24.8754563539578,
+    "lng": -63.8397263286188
+  },
+  "neuquen|picun leufu": {
+    "lat": -39.4039652237483,
+    "lng": -69.427190720517
+  },
+  "neuquen|zapala": {
+    "lat": -38.9221765260283,
+    "lng": -69.8223682005858
+  },
+  "rio negro|25 de mayo": {
+    "lat": -41.1330450365746,
+    "lng": -68.9063262041627
+  },
+  "chubut|telsen": {
+    "lat": -42.4388519406853,
+    "lng": -67.176877305263
+  },
+  "rio negro|pilcaniyeu": {
+    "lat": -40.8875523576138,
+    "lng": -70.4627105357719
+  },
+  "buenos aires|adolfo alsina": {
+    "lat": -37.196762082356,
+    "lng": -63.0560551528803
+  },
+  "mendoza|general alvear": {
+    "lat": -35.2188456896959,
+    "lng": -67.0805881742222
+  },
+  "salta|la caldera": {
+    "lat": -24.5623996239199,
+    "lng": -65.4290994435937
+  },
+  "chaco|sargento cabral": {
+    "lat": -26.7997133020842,
+    "lng": -59.5191057139149
+  },
+  "buenos aires|pellegrini": {
+    "lat": -36.2711917055859,
+    "lng": -63.2257521123403
+  },
+  "neuquen|alumine": {
+    "lat": -39.1314863536249,
+    "lng": -71.0463179632078
+  },
+  "salta|iruya": {
+    "lat": -22.8153452313602,
+    "lng": -64.9205141250691
+  },
+  "neuquen|lacar": {
+    "lat": -40.314223088982,
+    "lng": -71.1842639628873
+  },
+  "catamarca|fray mamerto esquiu": {
+    "lat": -28.3343382720204,
+    "lng": -65.731187897962
+  },
+  "catamarca|valle viejo": {
+    "lat": -28.6000684837485,
+    "lng": -65.7079324164837
+  },
+  "corrientes|san cosme": {
+    "lat": -27.3822986767274,
+    "lng": -58.5174742251831
+  },
+  "chubut|sarmiento": {
+    "lat": -45.3450926864638,
+    "lng": -69.0028400019161
+  },
+  "ciudad autonoma de buenos aires|comuna 1": {
+    "lat": -34.6064435423382,
+    "lng": -58.3715117424742
+  },
+  "ciudad autonoma de buenos aires|comuna 4": {
+    "lat": -34.6421128950646,
+    "lng": -58.3875614030278
+  },
+  "rio negro|el cuy": {
+    "lat": -39.7003601698155,
+    "lng": -68.4827895211107
+  },
+  "mendoza|las heras": {
+    "lat": -32.5246239358788,
+    "lng": -69.2679113756459
+  },
+  "chaco|tapenaga": {
+    "lat": -27.6596299369227,
+    "lng": -59.827840211346
+  },
+  "mendoza|lavalle": {
+    "lat": -32.5754675617188,
+    "lng": -67.8966912637568
+  },
+  "mendoza|malargue": {
+    "lat": -36.1589400383152,
+    "lng": -69.3130810458033
+  },
+  "cordoba|presidente roque saenz pena": {
+    "lat": -34.1404893695479,
+    "lng": -63.4188652087471
+  },
+  "neuquen|catan lil": {
+    "lat": -39.4807942919835,
+    "lng": -70.4335593332114
+  },
+  "chaco|presidencia de la plaza": {
+    "lat": -27.0446247369186,
+    "lng": -59.7745640420007
+  },
+  "ciudad autonoma de buenos aires|comuna 5": {
+    "lat": -34.6173699237915,
+    "lng": -58.4205721902504
+  },
+  "corrientes|esquina": {
+    "lat": -29.985327366863,
+    "lng": -59.2413818424126
+  },
+  "tierra del fuego, antartida e islas del atlantico sur|ushuaia": {
+    "lat": -54.7704676359158,
+    "lng": -66.6836200601613
+  },
+  "catamarca|antofagasta de la sierra": {
+    "lat": -25.9467556410811,
+    "lng": -67.6778798484787
+  },
+  "buenos aires|ensenada": {
+    "lat": -34.8421497421872,
+    "lng": -57.9791090925538
+  },
+  "tucuman|capital": {
+    "lat": -26.8332209186353,
+    "lng": -65.2170208037282
+  },
+  "santa fe|belgrano": {
+    "lat": -32.6104361547012,
+    "lng": -61.7047364516353
+  },
+  "buenos aires|pergamino": {
+    "lat": -33.8360668139653,
+    "lng": -60.5447828161659
+  },
+  "buenos aires|puan": {
+    "lat": -38.0760763207387,
+    "lng": -63.0574326099086
+  },
+  "buenos aires|general villegas": {
+    "lat": -34.7702605023112,
+    "lng": -62.9541988413061
+  },
+  "ciudad autonoma de buenos aires|comuna 12": {
+    "lat": -34.5662276068999,
+    "lng": -58.4904280414968
+  },
+  "santa fe|general obligado": {
+    "lat": -28.672536399396,
+    "lng": -59.5266963989458
+  },
+  "santa fe|vera": {
+    "lat": -28.9706345150851,
+    "lng": -60.4136679252075
+  },
+  "santa fe|9 de julio": {
+    "lat": -28.8486776771703,
+    "lng": -61.3979945646643
+  },
+  "rio negro|adolfo alsina": {
+    "lat": -40.7916894116905,
+    "lng": -63.7651004404077
+  },
+  "chaco|quitilipi": {
+    "lat": -26.6663185244379,
+    "lng": -60.1729742758302
+  },
+  "santa cruz|guer aike": {
+    "lat": -51.4134125039336,
+    "lng": -70.5618155469082
+  },
+  "catamarca|capayan": {
+    "lat": -28.9094976289814,
+    "lng": -65.9017191021383
+  },
+  "tucuman|burruyacu": {
+    "lat": -26.5305481465544,
+    "lng": -64.8195981132229
+  },
+  "santa fe|san jeronimo": {
+    "lat": -32.1537713587336,
+    "lng": -61.0481265782097
+  },
+  "chaco|independencia": {
+    "lat": -26.735179032354,
+    "lng": -60.7563736019567
+  },
+  "corrientes|curuzu cuatia": {
+    "lat": -29.6954668055505,
+    "lng": -58.3248599040647
+  },
+  "mendoza|lujan de cuyo": {
+    "lat": -33.0384947617689,
+    "lng": -69.4516850524047
+  },
+  "catamarca|tinogasta": {
+    "lat": -27.5418355834148,
+    "lng": -67.9307422147195
+  },
+  "ciudad autonoma de buenos aires|comuna 7": {
+    "lat": -34.636554414358,
+    "lng": -58.4518868569654
+  },
+  "la pampa|hucal": {
+    "lat": -37.9792315730965,
+    "lng": -63.9544864276514
+  },
+  "corrientes|itati": {
+    "lat": -27.3460559292444,
+    "lng": -58.0713817911441
+  },
+  "ciudad autonoma de buenos aires|comuna 10": {
+    "lat": -34.6278517920976,
+    "lng": -58.5028178465965
+  },
+  "la pampa|caleu caleu": {
+    "lat": -38.6756398635536,
+    "lng": -63.8968185406946
+  },
+  "la pampa|lihuel calel": {
+    "lat": -38.2616348854642,
+    "lng": -65.0966893102146
+  },
+  "la pampa|curaco": {
+    "lat": -38.1797329921075,
+    "lng": -66.330067375997
+  },
+  "neuquen|confluencia": {
+    "lat": -38.8322794945189,
+    "lng": -68.7940772839278
+  },
+  "neuquen|picunches": {
+    "lat": -38.5742773422999,
+    "lng": -70.3729610459357
+  },
+  "neuquen|anelo": {
+    "lat": -38.0983759451619,
+    "lng": -69.0157147264732
+  },
+  "neuquen|loncopue": {
+    "lat": -38.0659451614955,
+    "lng": -70.3142327793889
+  },
+  "neuquen|norquin": {
+    "lat": -37.6381186650332,
+    "lng": -70.6780421229319
+  },
+  "neuquen|pehuenches": {
+    "lat": -37.3984094176891,
+    "lng": -69.4030432724945
+  },
+  "ciudad autonoma de buenos aires|comuna 11": {
+    "lat": -34.6061370106731,
+    "lng": -58.4967420076817
+  },
+  "misiones|montecarlo": {
+    "lat": -26.6579081868111,
+    "lng": -54.5631774506644
+  },
+  "misiones|eldorado": {
+    "lat": -26.3138449972573,
+    "lng": -54.4407363386816
+  },
+  "misiones|san pedro": {
+    "lat": -26.62996077436,
+    "lng": -53.9629780421788
+  },
+  "tierra del fuego, antartida e islas del atlantico sur|antartida argentina": {
+    "lat": -82.7776766547034,
+    "lng": -50.6480306037361
+  },
+  "neuquen|minas": {
+    "lat": -36.8585578940124,
+    "lng": -70.78364814983
+  },
+  "neuquen|chos malal": {
+    "lat": -36.8805641891102,
+    "lng": -70.2863793101158
+  },
+  "chubut|cushamen": {
+    "lat": -42.3663973043627,
+    "lng": -70.7119978032417
+  },
+  "santa cruz|lago buenos aires": {
+    "lat": -46.8342043710739,
+    "lng": -70.6313995743965
+  },
+  "rio negro|pichi mahuida": {
+    "lat": -39.4076049744942,
+    "lng": -64.4007362191104
+  },
+  "santiago del estero|san martin": {
+    "lat": -28.1877612839021,
+    "lng": -63.854114579261
+  },
+  "jujuy|yavi": {
+    "lat": -22.290645260596,
+    "lng": -65.5667394207971
+  },
+  "jujuy|santa catalina": {
+    "lat": -22.1376406851166,
+    "lng": -66.227261407729
+  },
+  "jujuy|san pedro": {
+    "lat": -24.2985083171115,
+    "lng": -64.8109899059972
+  },
+  "jujuy|valle grande": {
+    "lat": -23.4666140607053,
+    "lng": -65.0120193444126
+  },
+  "formosa|patino": {
+    "lat": -24.8750081858591,
+    "lng": -59.9584280130313
+  },
+  "formosa|bermejo": {
+    "lat": -24.0254990220968,
+    "lng": -61.2828611773469
+  },
+  "jujuy|susques": {
+    "lat": -23.5206710927029,
+    "lng": -66.6617118803761
+  },
+  "formosa|matacos": {
+    "lat": -23.8544865427827,
+    "lng": -62.0770650055764
+  },
+  "salta|los andes": {
+    "lat": -24.6426248978878,
+    "lng": -67.3440956899683
+  },
+  "salta|oran": {
+    "lat": -23.4987916315192,
+    "lng": -64.150945650256
+  },
+  "jujuy|tilcara": {
+    "lat": -23.5604015183698,
+    "lng": -65.3200105901478
+  },
+  "jujuy|palpala": {
+    "lat": -24.1949225166052,
+    "lng": -65.1264498101135
+  },
+  "la pampa|loventue": {
+    "lat": -36.4785080840981,
+    "lng": -65.533063651288
+  },
+  "chubut|rio senguer": {
+    "lat": -45.3405591890669,
+    "lng": -70.6400850098256
+  },
+  "rio negro|bariloche": {
+    "lat": -41.4981376652733,
+    "lng": -71.5310863063756
+  },
+  "neuquen|huiliches": {
+    "lat": -39.7946776781884,
+    "lng": -71.2590025540624
+  },
+  "la pampa|limay mahuida": {
+    "lat": -37.2419021199685,
+    "lng": -66.5552326917265
+  },
+  "la pampa|puelen": {
+    "lat": -37.4345215375332,
+    "lng": -67.6045329036613
+  },
+  "la pampa|chalileo": {
+    "lat": -36.395699692841,
+    "lng": -66.5727424085761
+  },
+  "la pampa|chical co": {
+    "lat": -36.3969736431163,
+    "lng": -67.6944669009179
+  },
+  "santiago del estero|quebrachos": {
+    "lat": -29.3883234023198,
+    "lng": -63.3484161216539
+  },
+  "corrientes|monte caseros": {
+    "lat": -30.2289612354938,
+    "lng": -57.870301871575
+  },
+  "chaco|mayor luis j. fontana": {
+    "lat": -27.7429616104984,
+    "lng": -60.6567128818538
+  },
+  "chaco|fray justo santa maria de oro": {
+    "lat": -27.8647076723602,
+    "lng": -61.3012288739823
+  },
+  "la rioja|general belgrano": {
+    "lat": -30.5778081168076,
+    "lng": -65.9324739936757
+  },
+  "santa fe|las colonias": {
+    "lat": -31.3153379040603,
+    "lng": -61.1094808023915
+  },
+  "santa fe|san justo": {
+    "lat": -30.5304248144909,
+    "lng": -60.4886940672178
+  },
+  "santa fe|san cristobal": {
+    "lat": -30.2283897206038,
+    "lng": -61.3599372073841
+  },
+  "santa fe|san javier": {
+    "lat": -30.1041461062467,
+    "lng": -59.8980704736792
+  },
+  "la pampa|chapaleufu": {
+    "lat": -35.2298937893695,
+    "lng": -63.6603750662124
+  },
+  "la pampa|realico": {
+    "lat": -35.2306620563122,
+    "lng": -64.2098498059179
+  },
+  "la pampa|maraco": {
+    "lat": -35.6796161112326,
+    "lng": -63.6624899647122
+  },
+  "la pampa|trenel": {
+    "lat": -35.631875013139,
+    "lng": -64.2143766255202
+  },
+  "santiago del estero|copo": {
+    "lat": -25.9391612005653,
+    "lng": -62.7310972270609
+  },
+  "la pampa|capital": {
+    "lat": -36.4980625982423,
+    "lng": -64.198128304565
+  },
+  "jujuy|santa barbara": {
+    "lat": -24.007640144548,
+    "lng": -64.4023116738515
+  },
+  "chaco|almirante brown": {
+    "lat": -25.7452119099225,
+    "lng": -61.9589813624119
+  },
+  "salta|rosario de la frontera": {
+    "lat": -25.8715613006323,
+    "lng": -64.7288089239246
+  },
+  "neuquen|collon cura": {
+    "lat": -40.0529194288429,
+    "lng": -70.2813667759367
+  },
+  "ciudad autonoma de buenos aires|comuna 3": {
+    "lat": -34.6138430816924,
+    "lng": -58.4026514511807
+  },
+  "buenos aires|san fernando": {
+    "lat": -34.1558361119161,
+    "lng": -58.5345816568901
+  },
+  "buenos aires|tigre": {
+    "lat": -34.382019907997,
+    "lng": -58.5881738725709
+  },
+  "catamarca|santa maria": {
+    "lat": -26.7734648563207,
+    "lng": -66.2612705245824
+  },
+  "catamarca|santa rosa": {
+    "lat": -28.082107971849,
+    "lng": -65.3350824661739
+  },
+  "catamarca|la paz": {
+    "lat": -29.3955036215545,
+    "lng": -65.1920338746874
+  },
+  "santiago del estero|rio hondo": {
+    "lat": -27.4855424248983,
+    "lng": -64.7601169003321
+  },
+  "la rioja|vinchina": {
+    "lat": -28.3166977149073,
+    "lng": -68.5252928296074
+  },
+  "la rioja|capital": {
+    "lat": -29.4605896547988,
+    "lng": -66.3526000997493
+  },
+  "cordoba|rio seco": {
+    "lat": -30.0450412488063,
+    "lng": -63.1990187799045
+  },
+  "rio negro|avellaneda": {
+    "lat": -39.4102626929359,
+    "lng": -66.20639651701
+  },
+  "rio negro|general roca": {
+    "lat": -38.5298947783261,
+    "lng": -67.5574036622512
+  },
+  "san luis|belgrano": {
+    "lat": -32.7356111326592,
+    "lng": -66.7150525486673
+  },
+  "neuquen|los lagos": {
+    "lat": -40.7743503720999,
+    "lng": -71.4867232511371
+  },
+  "catamarca|capital": {
+    "lat": -28.4117889646495,
+    "lng": -65.8367262921682
+  },
+  "catamarca|ancasti": {
+    "lat": -28.9274130674418,
+    "lng": -65.504299177941
+  },
+  "catamarca|poman": {
+    "lat": -28.2337589059236,
+    "lng": -66.3888045363986
+  },
+  "ciudad autonoma de buenos aires|comuna 2": {
+    "lat": -34.5857888788086,
+    "lng": -58.3949035422527
+  },
+  "chaco|9 de julio": {
+    "lat": -26.9436383020752,
+    "lng": -61.264612522285
+  },
+  "cordoba|pocho": {
+    "lat": -31.4627416617352,
+    "lng": -65.4351550968219
+  },
+  "buenos aires|ezeiza": {
+    "lat": -34.8760968437468,
+    "lng": -58.5647013731149
+  },
+  "catamarca|andalgala": {
+    "lat": -27.5728459104474,
+    "lng": -66.3731024938335
+  },
+  "catamarca|ambato": {
+    "lat": -28.0199741656262,
+    "lng": -65.9227878835948
+  },
+  "ciudad autonoma de buenos aires|comuna 8": {
+    "lat": -34.6745664758358,
+    "lng": -58.461948060155
+  },
+  "santiago del estero|guasayan": {
+    "lat": -27.9768511960939,
+    "lng": -64.8712241216861
+  },
+  "catamarca|paclin": {
+    "lat": -28.1103167424607,
+    "lng": -65.6743180153264
+  },
+  "catamarca|el alto": {
+    "lat": -28.4317063831316,
+    "lng": -65.3604289203864
+  },
+  "cordoba|sobremonte": {
+    "lat": -29.7643092597004,
+    "lng": -64.1425182645874
+  },
+  "tierra del fuego, antartida e islas del atlantico sur|rio grande": {
+    "lat": -53.7462919871752,
+    "lng": -68.1361046544505
+  },
+  "ciudad autonoma de buenos aires|comuna 13": {
+    "lat": -34.5541262964697,
+    "lng": -58.4540029618054
+  },
+  "santiago del estero|banda": {
+    "lat": -27.4347067680665,
+    "lng": -64.2098658068652
+  },
+  "chubut|paso de indios": {
+    "lat": -44.0301843801728,
+    "lng": -68.6858628378531
+  },
+  "cordoba|capital": {
+    "lat": -31.4167568770155,
+    "lng": -64.1835837727284
+  },
+  "chubut|martires": {
+    "lat": -43.8138479495924,
+    "lng": -67.2399811031767
+  },
+  "santiago del estero|sarmiento": {
+    "lat": -28.1061147414452,
+    "lng": -63.4461751488241
+  },
+  "santa cruz|deseado": {
+    "lat": -47.3305629962178,
+    "lng": -68.0290548030539
+  },
+  "chubut|languineo": {
+    "lat": -43.3234918785199,
+    "lng": -70.3484079877641
+  },
+  "santiago del estero|belgrano": {
+    "lat": -29.0815053728088,
+    "lng": -62.2182795085019
+  },
+  "santiago del estero|aguirre": {
+    "lat": -29.2979732282428,
+    "lng": -62.5150973801298
+  },
+  "chaco|maipu": {
+    "lat": -26.3190099893669,
+    "lng": -60.4546439783309
+  },
+  "mendoza|san carlos": {
+    "lat": -34.0755248766466,
+    "lng": -69.0973090508602
+  },
+  "mendoza|tunuyan": {
+    "lat": -33.6228877049098,
+    "lng": -69.5092965661889
+  },
+  "santiago del estero|robles": {
+    "lat": -27.8539440726978,
+    "lng": -63.9075092603375
+  },
+  "santiago del estero|loreto": {
+    "lat": -28.6244804370084,
+    "lng": -64.3107274308462
+  },
+  "la pampa|catrilo": {
+    "lat": -36.581670209145,
+    "lng": -63.6648685343036
+  },
+  "santiago del estero|capital": {
+    "lat": -27.8847652276627,
+    "lng": -64.435667540413
+  },
+  "ciudad autonoma de buenos aires|comuna 14": {
+    "lat": -34.573874740768,
+    "lng": -58.4222940810483
+  },
+  "entre rios|colon": {
+    "lat": -32.0114827530749,
+    "lng": -58.3699129592392
+  },
+  "entre rios|villaguay": {
+    "lat": -31.6477388964372,
+    "lng": -59.0594708103114
+  },
+  "buenos aires|castelli": {
+    "lat": -36.0414897439213,
+    "lng": -57.6574251943684
+  },
+  "entre rios|san salvador": {
+    "lat": -31.576883538854,
+    "lng": -58.4863728567569
+  },
+  "catamarca|belen": {
+    "lat": -27.1019560038189,
+    "lng": -66.9224805098511
+  },
+  "buenos aires|almirante brown": {
+    "lat": -34.8356191132679,
+    "lng": -58.36737293295
+  },
+  "entre rios|nogoya": {
+    "lat": -32.2187123476403,
+    "lng": -59.7697019154662
+  },
+  "entre rios|tala": {
+    "lat": -32.3174117218427,
+    "lng": -59.2672864854832
+  },
+  "entre rios|gualeguay": {
+    "lat": -33.1192366285416,
+    "lng": -59.6014598265182
+  },
+  "entre rios|federacion": {
+    "lat": -30.7348532046962,
+    "lng": -58.1591551818899
+  },
+  "entre rios|la paz": {
+    "lat": -30.8973573249588,
+    "lng": -59.5004308899395
+  },
+  "entre rios|feliciano": {
+    "lat": -30.4138996015365,
+    "lng": -58.7288907563202
+  },
+  "buenos aires|presidente peron": {
+    "lat": -34.9298478405731,
+    "lng": -58.3980842106611
+  },
+  "buenos aires|junin": {
+    "lat": -34.5464751322689,
+    "lng": -61.0052501278322
+  },
+  "buenos aires|brandsen": {
+    "lat": -35.2225197990076,
+    "lng": -58.1752339039367
+  },
+  "buenos aires|chivilcoy": {
+    "lat": -34.915487328433,
+    "lng": -59.9584194881488
+  },
+  "buenos aires|alberti": {
+    "lat": -35.0369685106341,
+    "lng": -60.2819765918318
+  },
+  "buenos aires|bragado": {
+    "lat": -35.0614122707821,
+    "lng": -60.6040466528095
+  },
+  "buenos aires|general las heras": {
+    "lat": -34.9094243780878,
+    "lng": -58.9954466211925
+  },
+  "buenos aires|carlos casares": {
+    "lat": -35.7499222140362,
+    "lng": -61.3743777867738
+  },
+  "buenos aires|marcos paz": {
+    "lat": -34.8140029646158,
+    "lng": -58.8478312046572
+  },
+  "buenos aires|general viamonte": {
+    "lat": -34.9977788912459,
+    "lng": -61.0496572343522
+  },
+  "buenos aires|carlos tejedor": {
+    "lat": -35.3797449374452,
+    "lng": -62.4297895789754
+  },
+  "buenos aires|25 de mayo": {
+    "lat": -35.527208971772,
+    "lng": -60.2302837885052
+  },
+  "buenos aires|9 de julio": {
+    "lat": -35.4812271475831,
+    "lng": -60.975425441559
+  },
+  "buenos aires|pehuajo": {
+    "lat": -35.8836208341768,
+    "lng": -61.9281257343997
+  },
+  "buenos aires|tapalque": {
+    "lat": -36.3471436403082,
+    "lng": -60.1310650281756
+  },
+  "buenos aires|trenque lauquen": {
+    "lat": -36.0567662720701,
+    "lng": -62.6350797832329
+  },
+  "buenos aires|general belgrano": {
+    "lat": -35.8346623469788,
+    "lng": -58.6980799686583
+  },
+  "buenos aires|monte": {
+    "lat": -35.5098267581846,
+    "lng": -58.7672358382292
+  },
+  "buenos aires|roque perez": {
+    "lat": -35.481635701192,
+    "lng": -59.3575118159751
+  },
+  "buenos aires|olavarria": {
+    "lat": -36.8576340464573,
+    "lng": -60.6702054013071
+  },
+  "buenos aires|merlo": {
+    "lat": -34.7110032783084,
+    "lng": -58.7419584139756
+  },
+  "misiones|cainguas": {
+    "lat": -27.1478365768268,
+    "lng": -54.8023437852311
+  },
+  "tierra del fuego, antartida e islas del atlantico sur|islas del atlantico sur": {
+    "lat": -52.5006628799787,
+    "lng": -53.4026402162418
+  },
+  "buenos aires|esteban echeverria": {
+    "lat": -34.8312135656106,
+    "lng": -58.4769479291405
+  },
+  "buenos aires|arrecifes": {
+    "lat": -34.0118119181559,
+    "lng": -60.0626641477636
+  },
+  "buenos aires|capitan sarmiento": {
+    "lat": -34.1498445273572,
+    "lng": -59.8540147848747
+  },
+  "jujuy|dr. manuel belgrano": {
+    "lat": -24.0891183755518,
+    "lng": -65.4478782461086
+  },
+  "buenos aires|carmen de areco": {
+    "lat": -34.4067977883926,
+    "lng": -59.8844134882327
+  },
+  "buenos aires|salto": {
+    "lat": -34.2710777868364,
+    "lng": -60.3052878686828
+  },
+  "buenos aires|exaltacion de la cruz": {
+    "lat": -34.2951342236201,
+    "lng": -59.1559461316089
+  },
+  "buenos aires|san miguel": {
+    "lat": -34.5521343486779,
+    "lng": -58.6917835230047
+  },
+  "buenos aires|san andres de giles": {
+    "lat": -34.4377314289072,
+    "lng": -59.4731985905145
+  },
+  "buenos aires|mercedes": {
+    "lat": -34.6973213261419,
+    "lng": -59.4204811393582
+  },
+  "buenos aires|pilar": {
+    "lat": -34.4481640053043,
+    "lng": -58.9033327303822
+  },
+  "buenos aires|lujan": {
+    "lat": -34.5673224195595,
+    "lng": -59.1584564399668
+  },
+  "tucuman|famailla": {
+    "lat": -26.9759689777425,
+    "lng": -65.4789084982894
+  },
+  "buenos aires|hurlingham": {
+    "lat": -34.5992830551765,
+    "lng": -58.6495253867317
+  },
+  "buenos aires|moron": {
+    "lat": -34.6493861631091,
+    "lng": -58.6198317111492
+  },
+  "buenos aires|chacabuco": {
+    "lat": -34.6182002950801,
+    "lng": -60.3543081129662
+  },
+  "mendoza|junin": {
+    "lat": -33.1503940875751,
+    "lng": -68.4973606539186
+  },
+  "buenos aires|malvinas argentinas": {
+    "lat": -34.4873113444512,
+    "lng": -58.7121372415949
+  },
+  "buenos aires|tres lomas": {
+    "lat": -36.4971002162064,
+    "lng": -62.8639077725213
+  },
+  "buenos aires|ayacucho": {
+    "lat": -37.0354309121063,
+    "lng": -58.4425565239465
+  },
+  "buenos aires|guamini": {
+    "lat": -36.8906755108534,
+    "lng": -62.4185310608382
+  },
+  "buenos aires|general san martin": {
+    "lat": -34.5527719180977,
+    "lng": -58.5642821761285
+  },
+  "buenos aires|lincoln": {
+    "lat": -35.0704479695471,
+    "lng": -61.6824583851265
+  },
+  "buenos aires|laprida": {
+    "lat": -37.5165055849878,
+    "lng": -60.7681481810422
+  },
+  "buenos aires|san isidro": {
+    "lat": -34.4868929544319,
+    "lng": -58.5372090766799
+  },
+  "buenos aires|benito juarez": {
+    "lat": -37.586110705761,
+    "lng": -59.8883978406322
+  },
+  "buenos aires|colon": {
+    "lat": -33.885864543958,
+    "lng": -61.0624837286828
+  },
+  "buenos aires|ituzaingo": {
+    "lat": -34.6360716118614,
+    "lng": -58.6887595155761
+  },
+  "buenos aires|general rodriguez": {
+    "lat": -34.6506156900812,
+    "lng": -58.9878467982653
+  },
+  "buenos aires|suipacha": {
+    "lat": -34.7485741352291,
+    "lng": -59.7033860485774
+  },
+  "buenos aires|tres de febrero": {
+    "lat": -34.5960100738691,
+    "lng": -58.5791883855736
+  },
+  "la rioja|general felipe varela": {
+    "lat": -29.4499054722468,
+    "lng": -68.3285566475246
+  },
+  "buenos aires|florencio varela": {
+    "lat": -34.8777448240057,
+    "lng": -58.2585548857898
+  },
+  "buenos aires|navarro": {
+    "lat": -35.0304844816228,
+    "lng": -59.4293585541147
+  },
+  "buenos aires|canuelas": {
+    "lat": -35.1448044957896,
+    "lng": -58.6910941846835
+  },
+  "santiago del estero|moreno": {
+    "lat": -27.2982006559922,
+    "lng": -62.4639026540336
+  },
+  "chaco|chacabuco": {
+    "lat": -27.1153502635495,
+    "lng": -61.3088349505972
+  },
+  "buenos aires|san vicente": {
+    "lat": -35.0715087168304,
+    "lng": -58.4318120603267
+  },
+  "buenos aires|lobos": {
+    "lat": -35.2195857860094,
+    "lng": -59.1457418827425
+  },
+  "buenos aires|general alvear": {
+    "lat": -36.0347106495852,
+    "lng": -60.1331531037654
+  },
+  "buenos aires|quilmes": {
+    "lat": -34.7349707991152,
+    "lng": -58.2768580209942
+  },
+  "buenos aires|pila": {
+    "lat": -36.2029842239612,
+    "lng": -58.3404430505536
+  },
+  "buenos aires|general la madrid": {
+    "lat": -37.3561277769109,
+    "lng": -61.3441308948924
+  },
+  "buenos aires|bolivar": {
+    "lat": -36.2989479582916,
+    "lng": -61.1498600852285
+  },
+  "la rioja|castro barros": {
+    "lat": -28.8599829479134,
+    "lng": -66.918584755618
+  },
+  "buenos aires|balcarce": {
+    "lat": -37.7146198082264,
+    "lng": -58.2717475616555
+  },
+  "buenos aires|hipolito yrigoyen": {
+    "lat": -36.2591890205909,
+    "lng": -61.660187626031
+  },
+  "mendoza|capital": {
+    "lat": -32.8828960440395,
+    "lng": -68.893648801808
+  },
+  "buenos aires|dolores": {
+    "lat": -36.3989376730385,
+    "lng": -57.6319261244954
+  },
+  "buenos aires|azul": {
+    "lat": -36.7859352165928,
+    "lng": -59.696478337621
+  },
+  "buenos aires|daireaux": {
+    "lat": -36.6408692174847,
+    "lng": -61.8912495525965
+  },
+  "mendoza|godoy cruz": {
+    "lat": -32.9320744395304,
+    "lng": -68.9141362247952
+  },
+  "salta|cafayate": {
+    "lat": -26.1257489988731,
+    "lng": -65.8767230578258
+  },
+  "santiago del estero|figueroa": {
+    "lat": -27.3218567501665,
+    "lng": -63.579632022065
+  },
+  "buenos aires|saavedra": {
+    "lat": -37.7706381329573,
+    "lng": -62.4343829136658
+  },
+  "buenos aires|monte hermoso": {
+    "lat": -38.9616237886799,
+    "lng": -61.2921466954973
+  },
+  "buenos aires|loberia": {
+    "lat": -38.090052818611,
+    "lng": -58.6935497786696
+  },
+  "buenos aires|berisso": {
+    "lat": -34.9093551143988,
+    "lng": -57.8283797724826
+  },
+  "buenos aires|tordillo": {
+    "lat": -36.3905151218837,
+    "lng": -57.2738116449804
+  },
+  "buenos aires|zarate": {
+    "lat": -33.9970897980955,
+    "lng": -59.1282153004682
+  },
+  "buenos aires|ramallo": {
+    "lat": -33.5871861466481,
+    "lng": -60.0575064405905
+  },
+  "buenos aires|san nicolas": {
+    "lat": -33.4829873308981,
+    "lng": -60.2931487802824
+  },
+  "santiago del estero|salavina": {
+    "lat": -28.9187435895832,
+    "lng": -63.3035949539634
+  },
+  "santiago del estero|pellegrini": {
+    "lat": -26.2199018368927,
+    "lng": -64.0917498279144
+  },
+  "santiago del estero|avellaneda": {
+    "lat": -28.555362665393,
+    "lng": -63.20376658846
+  },
+  "chaco|2 de abril": {
+    "lat": -27.6198551557059,
+    "lng": -61.3289519563791
+  },
+  "mendoza|guaymallen": {
+    "lat": -32.8929748154748,
+    "lng": -68.7333034931406
+  },
+  "cordoba|juarez celman": {
+    "lat": -33.3295744809665,
+    "lng": -63.6063858554279
+  },
+  "salta|capital": {
+    "lat": -24.8897949232452,
+    "lng": -65.2713224010013
+  },
+  "santiago del estero|silipica": {
+    "lat": -28.1888486590344,
+    "lng": -64.2732683808613
+  },
+  "salta|la candelaria": {
+    "lat": -26.0848731785427,
+    "lng": -65.1760220468639
+  },
+  "la pampa|rancul": {
+    "lat": -35.408324405275,
+    "lng": -64.7962057702449
+  },
+  "mendoza|maipu": {
+    "lat": -32.9797495635853,
+    "lng": -68.6563133629426
+  },
+  "salta|guachipas": {
+    "lat": -25.7029584300217,
+    "lng": -65.4445406244237
+  },
+  "la pampa|atreuco": {
+    "lat": -37.0324944038817,
+    "lng": -63.7788849526284
+  },
+  "mendoza|san martin": {
+    "lat": -32.9140381657571,
+    "lng": -68.2888458647488
+  },
+  "la pampa|guatrache": {
+    "lat": -37.4836471472851,
+    "lng": -63.7813081297621
+  },
+  "la rioja|sanagasta": {
+    "lat": -29.1585269700836,
+    "lng": -67.0658836337284
+  },
+  "la pampa|conhelo": {
+    "lat": -36.0320043909386,
+    "lng": -64.5086492198133
+  },
+  "misiones|libertador general san martin": {
+    "lat": -26.8931448896048,
+    "lng": -54.9233629608393
+  },
+  "la rioja|rosario vera penaloza": {
+    "lat": -31.4229834527921,
+    "lng": -66.6741641296595
+  },
+  "corrientes|san miguel": {
+    "lat": -27.8758596571718,
+    "lng": -57.4100421733803
+  },
+  "la rioja|general juan facundo quiroga": {
+    "lat": -30.8006382527121,
+    "lng": -66.8678571954155
+  },
+  "la rioja|angel vicente penaloza": {
+    "lat": -30.3128975387926,
+    "lng": -66.6630521188297
+  },
+  "corrientes|empedrado": {
+    "lat": -27.8961126654966,
+    "lng": -58.665840300338
+  },
+  "la rioja|chilecito": {
+    "lat": -29.39593747537,
+    "lng": -67.427886789152
+  },
+  "la pampa|toay": {
+    "lat": -36.662162152652,
+    "lng": -64.6922110147401
+  },
+  "cordoba|colon": {
+    "lat": -31.1461809443167,
+    "lng": -64.149086867857
+  },
+  "corrientes|ituzaingo": {
+    "lat": -27.9113085755074,
+    "lng": -56.790098223735
+  },
+  "la rioja|famatina": {
+    "lat": -28.6973536209113,
+    "lng": -67.5592543116777
+  },
+  "santa fe|general lopez": {
+    "lat": -33.9221898209726,
+    "lng": -61.939680211795
+  },
+  "santa fe|constitucion": {
+    "lat": -33.4871399171909,
+    "lng": -60.8374001304635
+  },
+  "santa fe|caseros": {
+    "lat": -33.2249739383268,
+    "lng": -61.5428621200429
+  },
+  "santa fe|rosario": {
+    "lat": -33.1178472652264,
+    "lng": -60.7232422315034
+  },
+  "santa fe|san lorenzo": {
+    "lat": -32.9413325358441,
+    "lng": -60.9640078882428
+  },
+  "santa fe|iriondo": {
+    "lat": -32.7060836089974,
+    "lng": -61.273387709005
+  },
+  "buenos aires|lanus": {
+    "lat": -34.7056542439723,
+    "lng": -58.3946965048442
+  },
+  "la rioja|general san martin": {
+    "lat": -31.6414651427458,
+    "lng": -66.1458162300477
+  },
+  "la rioja|san blas de los sauces": {
+    "lat": -28.5432938438178,
+    "lng": -67.1581352967929
+  },
+  "jujuy|san antonio": {
+    "lat": -24.3466655289394,
+    "lng": -65.4465034514555
+  },
+  "jujuy|rinconada": {
+    "lat": -22.621441999219,
+    "lng": -66.5415632203904
+  },
+  "formosa|ramon lista": {
+    "lat": -23.120377014683,
+    "lng": -62.1378892144612
+  },
+  "salta|la poma": {
+    "lat": -24.146976523836,
+    "lng": -66.2072973644748
+  },
+  "chubut|biedma": {
+    "lat": -42.4435913808796,
+    "lng": -64.9333479901808
+  },
+  "corrientes|capital": {
+    "lat": -27.5223367116017,
+    "lng": -58.7624842360155
+  },
+  "corrientes|san luis del palmar": {
+    "lat": -27.6020530782378,
+    "lng": -58.2683508234644
+  },
+  "formosa|formosa": {
+    "lat": -25.9396352320143,
+    "lng": -58.3773174492375
+  },
+  "formosa|pilcomayo": {
+    "lat": -25.3700377166163,
+    "lng": -58.0626062654551
+  },
+  "chubut|tehuelches": {
+    "lat": -44.2001445034306,
+    "lng": -70.5769493727789
+  },
+  "chubut|escalante": {
+    "lat": -45.2828915460529,
+    "lng": -67.7088649201803
+  },
+  "cordoba|ischilin": {
+    "lat": -30.3985157855081,
+    "lng": -64.609928019562
+  },
+  "cordoba|totoral": {
+    "lat": -30.7263442710895,
+    "lng": -63.9844039885161
+  },
+  "cordoba|general san martin": {
+    "lat": -32.5143227869566,
+    "lng": -63.2562056057504
+  },
+  "cordoba|san javier": {
+    "lat": -32.0760871294213,
+    "lng": -65.1422236066015
+  },
+  "cordoba|rio primero": {
+    "lat": -31.0315240757859,
+    "lng": -63.436114778127
+  },
+  "cordoba|marcos juarez": {
+    "lat": -33.0308431509632,
+    "lng": -62.2775947053165
+  },
+  "chaco|general donovan": {
+    "lat": -27.1388899905163,
+    "lng": -59.3467829351985
+  },
+  "buenos aires|leandro n. alem": {
+    "lat": -34.4985652798534,
+    "lng": -61.6125874742962
+  },
+  "chaco|libertador general san martin": {
+    "lat": -26.3775454900773,
+    "lng": -59.4877181570758
+  },
+  "chubut|gastre": {
+    "lat": -42.7490296126002,
+    "lng": -68.8023248035912
+  },
+  "buenos aires|general arenales": {
+    "lat": -34.2379020431362,
+    "lng": -61.2833812257449
+  },
+  "chaco|bermejo": {
+    "lat": -26.9580421515067,
+    "lng": -58.709116096044
+  },
+  "cordoba|calamuchita": {
+    "lat": -32.2020591306015,
+    "lng": -64.6151725606746
+  },
+  "tucuman|cruz alta": {
+    "lat": -26.9180036848972,
+    "lng": -64.9738642266054
+  },
+  "tucuman|lules": {
+    "lat": -26.8622353459017,
+    "lng": -65.4310245938907
+  },
+  "tucuman|yerba buena": {
+    "lat": -26.7839244723358,
+    "lng": -65.3411739273315
+  },
+  "tucuman|tafi viejo": {
+    "lat": -26.6601491447319,
+    "lng": -65.4640739296384
+  },
+  "san luis|libertador general san martin": {
+    "lat": -32.5784192378867,
+    "lng": -65.7095887718459
+  },
+  "san luis|coronel pringles": {
+    "lat": -33.1068820570862,
+    "lng": -65.9007902060388
+  },
+  "san luis|chacabuco": {
+    "lat": -32.7270768664399,
+    "lng": -65.198209788321
+  },
+  "buenos aires|rivadavia": {
+    "lat": -35.581056985938,
+    "lng": -63.0947616852349
+  },
+  "buenos aires|patagones": {
+    "lat": -40.1963833078675,
+    "lng": -62.8508023633523
+  },
+  "san luis|juan martin de pueyrredon": {
+    "lat": -33.900714617211,
+    "lng": -66.5024402257537
+  },
+  "san luis|general pedernera": {
+    "lat": -33.8922244453095,
+    "lng": -65.5597745631101
+  },
+  "tucuman|trancas": {
+    "lat": -26.3434123363847,
+    "lng": -65.4058207897255
+  },
+  "tucuman|tafi del valle": {
+    "lat": -26.5914686020616,
+    "lng": -65.8893504834043
+  },
+  "ciudad autonoma de buenos aires|comuna 9": {
+    "lat": -34.6517887970418,
+    "lng": -58.4991751735853
+  },
+  "san luis|junin": {
+    "lat": -32.2163016656263,
+    "lng": -65.3948431186635
+  },
+  "santiago del estero|mitre": {
+    "lat": -29.6150490318213,
+    "lng": -62.7386757564942
+  },
+  "santiago del estero|atamisqui": {
+    "lat": -28.6918181695012,
+    "lng": -63.8815639977726
+  },
+  "corrientes|beron de astrada": {
+    "lat": -27.4779704395686,
+    "lng": -57.6113807712108
+  },
+  "tierra del fuego, antartida e islas del atlantico sur|tolhuin": {
+    "lat": -54.4245608947124,
+    "lng": -67.5034849447963
+  },
+  "misiones|capital": {
+    "lat": -27.5505259291655,
+    "lng": -55.8565833366475
+  },
+  "misiones|candelaria": {
+    "lat": -27.4608500546705,
+    "lng": -55.5826900383218
+  },
+  "santiago del estero|jimenez": {
+    "lat": -26.8996081032586,
+    "lng": -64.2724736671085
+  },
+  "buenos aires|coronel de marina leonardo rosales": {
+    "lat": -38.8490773280679,
+    "lng": -61.8355844196542
+  },
+  "buenos aires|baradero": {
+    "lat": -33.9319613769628,
+    "lng": -59.4927871380553
+  },
+  "buenos aires|san pedro": {
+    "lat": -33.7809860202918,
+    "lng": -59.7826260109294
+  },
+  "salta|santa victoria": {
+    "lat": -22.3958917322092,
+    "lng": -64.8955647956079
+  },
+  "salta|general jose de san martin": {
+    "lat": -22.7144623805907,
+    "lng": -63.6582864287813
+  },
+  "salta|rivadavia": {
+    "lat": -23.5194718277586,
+    "lng": -62.8285940219747
+  },
+  "salta|rosario de lerma": {
+    "lat": -24.5457519055916,
+    "lng": -65.8530078405525
+  },
+  "jujuy|ledesma": {
+    "lat": -23.7854859185353,
+    "lng": -64.8288746330382
+  },
+  "jujuy|humahuaca": {
+    "lat": -23.0820099180032,
+    "lng": -65.4095227491295
+  },
+  "jujuy|cochinoca": {
+    "lat": -22.9392130779775,
+    "lng": -65.9347260935414
+  },
+  "jujuy|tumbaya": {
+    "lat": -23.7434749479331,
+    "lng": -65.6961901966194
+  },
+  "buenos aires|florentino ameghino": {
+    "lat": -34.8741058055206,
+    "lng": -62.4017162645879
+  },
+  "chubut|florentino ameghino": {
+    "lat": -44.4231369267293,
+    "lng": -66.1302641083269
+  },
+  "tucuman|la cocha": {
+    "lat": -27.7940604809292,
+    "lng": -65.5977877083311
+  },
+  "tucuman|graneros": {
+    "lat": -27.7132775964524,
+    "lng": -65.2550360276541
+  },
+  "tucuman|juan bautista alberdi": {
+    "lat": -27.6060757021473,
+    "lng": -65.7831912587906
+  },
+  "tucuman|rio chico": {
+    "lat": -27.4501203542874,
+    "lng": -65.7518266389415
+  },
+  "tucuman|simoca": {
+    "lat": -27.4238370613532,
+    "lng": -65.2924847788807
+  },
+  "tucuman|chicligasta": {
+    "lat": -27.2696018679715,
+    "lng": -65.8110637206058
+  },
+  "tucuman|monteros": {
+    "lat": -27.1106201705702,
+    "lng": -65.6430768814482
+  },
+  "tucuman|leales": {
+    "lat": -27.1918831757327,
+    "lng": -65.0848647351414
+  },
+  "santa fe|san martin": {
+    "lat": -32.0122706461745,
+    "lng": -61.8090742014148
+  },
+  "santa fe|la capital": {
+    "lat": -31.4753563668226,
+    "lng": -60.6694790136058
+  },
+  "misiones|general manuel belgrano": {
+    "lat": -25.9784317106931,
+    "lng": -53.9638550967802
+  },
+  "misiones|guarani": {
+    "lat": -27.0262348990631,
+    "lng": -54.2693651314473
+  },
+  "misiones|iguazu": {
+    "lat": -25.8747354911285,
+    "lng": -54.4004185890739
+  },
+  "misiones|25 de mayo": {
+    "lat": -27.3786143619873,
+    "lng": -54.6340904863083
+  },
+  "misiones|obera": {
+    "lat": -27.4763636010381,
+    "lng": -55.0712221113606
+  },
+  "santa fe|castellanos": {
+    "lat": -31.2314615495091,
+    "lng": -61.6572584461682
+  },
+  "santa fe|garay": {
+    "lat": -31.0546413334486,
+    "lng": -60.1258077355938
+  },
+  "la pampa|quemu quemu": {
+    "lat": -36.1306405658638,
+    "lng": -63.6637300134466
+  },
+  "misiones|san ignacio": {
+    "lat": -27.1765939471765,
+    "lng": -55.3392901736977
+  },
+  "la pampa|utracan": {
+    "lat": -37.3338794806419,
+    "lng": -65.082831667763
+  },
+  "corrientes|san martin": {
+    "lat": -28.8289801487463,
+    "lng": -56.9315835110542
+  },
+  "corrientes|paso de los libres": {
+    "lat": -29.5936363396967,
+    "lng": -57.2996338361445
+  },
+  "corrientes|goya": {
+    "lat": -29.4514535088561,
+    "lng": -59.2559121520651
+  },
+  "corrientes|lavalle": {
+    "lat": -28.9879904880901,
+    "lng": -58.9337232555635
+  },
+  "corrientes|san roque": {
+    "lat": -28.705807188664,
+    "lng": -58.6130359023562
+  },
+  "corrientes|general alvear": {
+    "lat": -28.775163187308,
+    "lng": -56.5115304340621
+  },
+  "corrientes|concepcion": {
+    "lat": -28.4083995312262,
+    "lng": -58.0313928425117
+  },
+  "corrientes|bella vista": {
+    "lat": -28.4973870089949,
+    "lng": -58.9304354321186
+  },
+  "corrientes|santo tome": {
+    "lat": -28.2311041286613,
+    "lng": -56.2221766248194
+  },
+  "corrientes|saladas": {
+    "lat": -28.2124686853348,
+    "lng": -58.6199128880477
+  },
+  "corrientes|general paz": {
+    "lat": -27.7199319611528,
+    "lng": -57.7876331852429
+  },
+  "misiones|leandro n. alem": {
+    "lat": -27.6306652583192,
+    "lng": -55.3880677316604
+  },
+  "misiones|san javier": {
+    "lat": -27.7771031453698,
+    "lng": -55.1674595937339
+  },
+  "corrientes|mburucuya": {
+    "lat": -28.0163838994325,
+    "lng": -58.1855639990468
+  },
+  "misiones|concepcion": {
+    "lat": -27.9311673935877,
+    "lng": -55.4670364912488
+  },
+  "misiones|apostoles": {
+    "lat": -27.8887539522051,
+    "lng": -55.6781134842867
+  },
+  "chaco|1° de mayo": {
+    "lat": -27.1678037354366,
+    "lng": -58.9587415590109
+  },
+  "chaco|san fernando": {
+    "lat": -27.7156982892704,
+    "lng": -59.1154439908292
+  },
+  "chaco|san lorenzo": {
+    "lat": -27.3933734765875,
+    "lng": -60.3637302119912
+  },
+  "buenos aires|lomas de zamora": {
+    "lat": -34.7549679553956,
+    "lng": -58.4240954303406
+  },
+  "buenos aires|avellaneda": {
+    "lat": -34.6781993084404,
+    "lng": -58.3411445451106
+  },
+  "chaco|25 de mayo": {
+    "lat": -26.8170406143405,
+    "lng": -60.0184594861944
+  },
+  "chaco|general belgrano": {
+    "lat": -26.8478157545068,
+    "lng": -61.0713338324887
+  },
+  "chaco|libertad": {
+    "lat": -27.3493250970289,
+    "lng": -59.2597877694895
+  },
+  "chaco|comandante fernandez": {
+    "lat": -26.7853900358381,
+    "lng": -60.4612869070114
+  },
+  "ciudad autonoma de buenos aires|comuna 15": {
+    "lat": -34.5918836701535,
+    "lng": -58.4627740218465
+  },
+  "san juan|chimbas": {
+    "lat": -31.4874196948537,
+    "lng": -68.5239289663008
+  },
+  "san juan|capital": {
+    "lat": -31.5330748483668,
+    "lng": -68.5342856277496
+  },
+  "san juan|rivadavia": {
+    "lat": -31.5542325394282,
+    "lng": -68.6416232535725
+  },
+  "san juan|9 de julio": {
+    "lat": -31.6454181217339,
+    "lng": -68.3891603884533
+  },
+  "san juan|albardon": {
+    "lat": -31.209735511428,
+    "lng": -68.4521792374306
+  },
+  "san juan|angaco": {
+    "lat": -31.1922718652932,
+    "lng": -68.1320483297946
+  },
+  "san juan|santa lucia": {
+    "lat": -31.5327197592087,
+    "lng": -68.4634100474193
+  },
+  "san juan|rawson": {
+    "lat": -31.6866317967417,
+    "lng": -68.4675945970348
+  },
+  "san juan|25 de mayo": {
+    "lat": -31.9898921289958,
+    "lng": -67.8268026426216
+  },
+  "san juan|san martin": {
+    "lat": -31.5285457556281,
+    "lng": -68.2072669737396
+  },
+  "san juan|pocito": {
+    "lat": -31.7472539046839,
+    "lng": -68.5846798192063
+  },
+  "san juan|zonda": {
+    "lat": -31.6417783563664,
+    "lng": -68.9548418805416
+  },
+  "san juan|ullum": {
+    "lat": -31.0852853750901,
+    "lng": -68.8823909182891
+  },
+  "san juan|sarmiento": {
+    "lat": -32.076116858425,
+    "lng": -68.6870408796588
+  },
+  "san juan|calingasta": {
+    "lat": -31.4509359086826,
+    "lng": -69.8318658247746
+  },
+  "san juan|iglesia": {
+    "lat": -29.6011907018103,
+    "lng": -69.4387201063957
+  },
+  "san juan|jachal": {
+    "lat": -30.3546413571108,
+    "lng": -68.4399965840681
+  },
+  "san juan|valle fertil": {
+    "lat": -30.7168856749658,
+    "lng": -67.5276736787401
+  },
+  "san juan|caucete": {
+    "lat": -31.5069003261853,
+    "lng": -67.5454408659079
+  },
+  "buenos aires|la plata": {
+    "lat": -35.0038470156345,
+    "lng": -58.0177777886077
+  },
+  "corrientes|mercedes": {
+    "lat": -29.0645067636205,
+    "lng": -57.8183859330354
+  }
+}
