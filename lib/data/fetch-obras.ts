@@ -10,6 +10,19 @@ import type { Obra, ObraRaw, DepartmentLookup } from "../types";
 const CSV_URL =
   "https://mapainversiones.obraspublicas.gob.ar/opendata/dataset_mop.csv";
 
+function normalizeEtapa(raw: string | undefined): string {
+  if (!raw || raw.trim() === "") return "Otras";
+  const lower = raw.trim().toLowerCase();
+  if (lower === "finalizada" || lower === "finalizado" || lower === "finalizadas")
+    return "Finalizada";
+  if (lower.includes("ejecuci") || lower.includes("ejecucion"))
+    return "En ejecución";
+  if (lower === "paralizada") return "Paralizada";
+  if (lower.includes("licitaci") || lower.includes("licitacion"))
+    return "En proceso de licitación";
+  return "Otras";
+}
+
 function cleanDashValue(value: string): string {
   if (!value || value.trim() === "-" || value.trim() === "") return "";
   return value.trim();
@@ -48,7 +61,7 @@ function mapRawToObra(
     avanceFinanciero: parsePercentage(raw.avancefinanciero),
     departamento: raw.nombredepto || "",
     provincia: raw.nombreprovincia || "",
-    etapa: raw.etapaobra || "Desconocido",
+    etapa: normalizeEtapa(raw.etapaobra),
     tipo: raw.tipoproyecto || "",
     urlPerfil: raw.url_perfil_obra || "",
     fechaInicio: raw.fechainicioanio || "",
