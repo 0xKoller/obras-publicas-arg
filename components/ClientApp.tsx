@@ -33,7 +33,10 @@ export default function ClientApp() {
     yearRange: defaultYearRange,
   });
 
-  useEffect(() => {
+  const fetchData = useCallback(() => {
+    setError(null);
+    setLoading(true);
+
     Promise.all([
       fetch("/api/obras")
         .then((res) => {
@@ -66,6 +69,10 @@ export default function ClientApp() {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   // Auto-select obra from URL query param (?obra=ID) and fly to it
   useEffect(() => {
@@ -166,7 +173,13 @@ export default function ClientApp() {
     return (
       <div className="flex-1 flex items-center justify-center">
         <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 max-w-md text-center">
-          <p className="text-sm text-destructive font-medium">Error: {error}</p>
+          <p className="text-sm text-destructive font-medium mb-4">Error: {error}</p>
+          <button
+            onClick={fetchData}
+            className="px-4 py-2 bg-destructive text-destructive-foreground rounded-md text-sm font-medium hover:bg-destructive/90 transition-colors"
+          >
+            Reintentar
+          </button>
         </div>
       </div>
     );
