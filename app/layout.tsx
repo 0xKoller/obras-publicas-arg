@@ -21,6 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="dns-prefetch" href="https://a.basemaps.cartocdn.com" />
+        <link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com" />
+        <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com" />
+        <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossOrigin="anonymous" />
+      </head>
       <body className={`${encodeSans.variable} antialiased font-sans`}>
         {children}
       </body>

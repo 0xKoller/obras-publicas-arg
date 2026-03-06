@@ -1,6 +1,19 @@
 export const ARGENTINA_CENTER: [number, number] = [-38.4161, -63.6167];
 export const DEFAULT_ZOOM = 4;
 
+export const ARGENTINA_BOUNDS: [[number, number], [number, number]] = [
+  [-57, -76],
+  [-20, -52],
+];
+export const MIN_ZOOM = 4;
+export const MAX_ZOOM = 18;
+export const MAX_BOUNDS_VISCOSITY = 1.0;
+
+export const TILE_URL =
+  "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+export const TILE_ATTRIBUTION =
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
 export const STATUS_COLORS: Record<string, string> = {
   Finalizada: "#22c55e",
   "Finalizado": "#22c55e",

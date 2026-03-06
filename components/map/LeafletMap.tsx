@@ -16,7 +16,13 @@ import type { LatLngBounds } from "leaflet";
 import type { Obra } from "@/lib/types";
 import {
   ARGENTINA_CENTER,
+  ARGENTINA_BOUNDS,
   DEFAULT_ZOOM,
+  MIN_ZOOM,
+  MAX_ZOOM,
+  MAX_BOUNDS_VISCOSITY,
+  TILE_URL,
+  TILE_ATTRIBUTION,
   getStatusColor,
   formatARS,
 } from "@/lib/constants";
@@ -127,12 +133,20 @@ export default function LeafletMap({
     <MapContainer
       center={initialCenter ?? ARGENTINA_CENTER}
       zoom={initialZoom ?? DEFAULT_ZOOM}
+      minZoom={MIN_ZOOM}
+      maxZoom={MAX_ZOOM}
+      maxBounds={ARGENTINA_BOUNDS}
+      maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
       className="h-full w-full"
       scrollWheelZoom={true}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution={TILE_ATTRIBUTION}
+        url={TILE_URL}
+        bounds={ARGENTINA_BOUNDS}
+        updateWhenZooming={false}
+        updateWhenIdle={true}
+        keepBuffer={2}
       />
       <FitBounds obras={obras} />
       <ViewportMarkers
