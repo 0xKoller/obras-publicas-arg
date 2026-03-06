@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ClientApp from "@/components/ClientApp";
 import Footer from "@/components/Footer";
 import { MapPin } from "lucide-react";
@@ -35,7 +36,9 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <ClientApp />
+      <Suspense>
+        <ClientApp />
+      </Suspense>
 
       {/* Footer */}
       <Footer />
