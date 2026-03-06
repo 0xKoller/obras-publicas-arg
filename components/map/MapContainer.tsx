@@ -15,11 +15,22 @@ const LeafletMap = dynamic(() => import("./LeafletMap"), {
 interface MapContainerWrapperProps {
   obras: Obra[];
   onSelectObra: (obra: Obra) => void;
+  initialCenter?: [number, number];
+  initialZoom?: number;
 }
 
 export default function MapContainerWrapper({
   obras,
   onSelectObra,
+  initialCenter,
+  initialZoom,
 }: MapContainerWrapperProps) {
-  return <LeafletMap obras={obras} onSelectObra={onSelectObra} />;
+  return (
+    <LeafletMap
+      obras={obras}
+      onSelectObra={onSelectObra}
+      initialCenter={initialCenter}
+      initialZoom={initialZoom}
+    />
+  );
 }

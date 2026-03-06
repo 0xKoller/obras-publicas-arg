@@ -14,6 +14,10 @@ export default function ClientApp() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedObra, setSelectedObra] = useState<Obra | null>(null);
+  const [userLocation, setUserLocation] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
   const [filters, setFilters] = useState<FilterState>({
     province: null,
     sectors: [],
@@ -22,13 +26,31 @@ export default function ClientApp() {
   });
 
   useEffect(() => {
-    fetch("/api/obras")
-      .then((res) => {
-        if (!res.ok) throw new Error("Error cargando datos");
-        return res.json();
-      })
-      .then((data: Obra[]) => {
-        setObras(data);
+    Promise.all([
+      fetch("/api/obras")
+        .then((res) => {
+          if (!res.ok) throw new Error("Error cargando datos");
+          return res.json();
+        }),
+      fetch("/api/geolocation")
+        .then((res) => res.json())
+        .catch(() => null),
+    ])
+      .then(([obrasData, geoData]) => {
+        setObras(obrasData);
+        if (geoData) {
+          setUserLocation(geoData);
+        } else if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              setUserLocation({
+                lat: pos.coords.latitude,
+                lng: pos.coords.longitude,
+              });
+            },
+            () => {} // User denied or error — stay on default view
+          );
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -121,6 +143,12 @@ export default function ClientApp() {
         <MapContainerWrapper
           obras={filteredObras}
           onSelectObra={handleSelectObra}
+          initialCenter={
+            userLocation
+              ? [userLocation.lat, userLocation.lng]
+              : undefined
+          }
+          initialZoom={userLocation ? 10 : undefined}
         />
       </div>
 
